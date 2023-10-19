@@ -36,7 +36,7 @@ const Meta = ({title, description, keywords, ogImage, children}) => {
 				{ogImage ?
 					<meta property="og:image" content={ogImage}/>
 					:
-					<meta property="og:image" content="/logo.png"/>
+					<meta property="og:image" content={`${process.env.HOST_URL || ""}/logo.png`}/>
 				}
 			
 			</Head>
