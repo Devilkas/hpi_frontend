@@ -1,0 +1,32 @@
+.page
+	&__content
+		position: relative
+	
+	&__title
+		margin-top: 6rem
+		text-align: center
+		font-size: 2rem
+		position: relative
+		margin-bottom: 3rem
+		
+		h2
+			&:after
+				content: ""
+				position: absolute
+				width: 9rem
+				height: 0.4rem
+				background-color: #253b80
+				margin: auto
+				left: 0
+				right: 0
+				display: block
+
+@media (max-width: 1024px)
+	.page
+		&__title
+			margin-top: 1rem
+
+@media (max-width: 576px)
+	.page
+		&__title
+			font-size: 1rem

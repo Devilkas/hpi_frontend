@@ -1,0 +1,64 @@
+@import "@/styles/var"
+
+.events
+	position: relative
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-gap: 1rem
+	margin: auto 1rem
+	
+	&__date
+		text-align: center
+		font-size: 1.5rem
+		border-bottom: 5px solid $color-orange
+		color: $color-orange
+		transition: all .3s
+		background: white
+	
+	&__item
+		background: rgba($color-blue, .3)
+		transition: all .3s
+		
+		&:hover
+			background: rgba($color-blue, .6)
+			
+			.events
+				&__date
+					border-bottom: 5px solid $color-blue-dark
+					color: $color-blue-dark
+	
+	
+	&__img
+		position: relative
+		width: 100%
+		height: auto
+		
+		img
+			position: relative
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+	
+	&__content
+		padding: 1rem
+	
+	&__title
+		text-align: center
+		font-weight: bold
+		margin-bottom: 1rem
+		font-size: 1.2rem
+	
+	&__description
+		text-align: justify
+
+@media (max-width: 1024px)
+	.events
+		grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 768px)
+	.events
+		grid-template-columns: repeat(1, 1fr)
+		&__title
+			font-size: 1rem

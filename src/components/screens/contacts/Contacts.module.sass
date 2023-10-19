@@ -1,0 +1,64 @@
+@import "@/styles/var"
+
+.contacts
+	padding: 0 1rem
+	
+	&__title
+		margin-top: 6rem
+		text-align: center
+		font-size: 2rem
+		position: relative
+		margin-bottom: 3rem
+		
+		h2
+			&:after
+				content: ""
+				position: absolute
+				width: 9rem
+				height: 0.4rem
+				background-color: $color-blue
+				margin: auto
+				left: 0
+				right: 0
+				display: block
+	
+	&__content
+		position: relative
+		
+		li
+			list-style: none
+			position: relative
+			padding-bottom: 1rem
+			margin-bottom: 1rem
+			&:not(:last-child)
+				&:after
+					content: ""
+					display: block
+					position: absolute
+					left: 0
+					bottom: 0
+					background-color: $color-blue-dark
+					width: 32rem
+					height: 2px
+			h3
+				font-size: 2rem
+			a
+				color: $color-blue-dark
+				text-decoration: underline
+				transition: all .3s
+				
+				&:hover
+					color: $color-orange
+			
+			p
+				padding-left: 1rem
+			
+@media (max-width: 1024px)
+	.contacts
+		&__title
+			margin-top: 1rem
+
+@media (max-width: 576px)
+	.contacts
+		&__title
+			font-size: 1rem

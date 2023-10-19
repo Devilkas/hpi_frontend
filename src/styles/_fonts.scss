@@ -1,0 +1,39 @@
+@font-face {
+  font-family: FiraMed;
+  font-display: swap;
+  src: url("../fonts/FiraSansMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: FiraSemi;
+  src: url("../fonts/FiraSansCondensed-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: FiraExtra;
+  src: url("../fonts/FiraSansCondensed-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SansaReg;
+  src: url("../fonts/SansationRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SansaBold;
+  src: url("../fonts/SansationBold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}

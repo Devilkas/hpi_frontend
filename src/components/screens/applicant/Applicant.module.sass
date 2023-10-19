@@ -1,0 +1,192 @@
+@import "@/styles/var"
+
+.applicant
+	padding: 0 1rem
+	
+	&__title
+		margin-top: 6rem
+		text-align: center
+		font-size: 2rem
+		position: relative
+		margin-bottom: 3rem
+		
+		h2
+			&:after
+				content: ""
+				position: absolute
+				width: 9rem
+				height: 0.4rem
+				background-color: $color-blue
+				margin: auto
+				left: 0
+				right: 0
+				display: block
+	
+	&__description
+		position: relative
+		
+		img
+			width: 100%
+			height: auto
+		
+		h3
+			font-size: 2rem
+		
+		li
+			position: relative
+			margin-left: 2rem
+			
+			a
+				color: $color-blue-dark
+				text-decoration: underline
+				transition: all .3s
+				
+				&:hover
+					color: $color-orange
+			
+			p
+				padding-left: 1rem
+
+
+.tab
+	position: relative
+	
+	&__nav
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		align-items: center
+		background: rgba($color-blue, .2)
+	
+	
+	&__list
+		position: relative
+	
+	&__link
+		background: transparent
+		padding: 1rem 5rem
+		outline: none
+		border: none
+		font-size: 2rem
+		text-align: center
+		cursor: pointer
+		transition: all .3s
+		
+		
+		&:hover
+			color: white
+			background: $color-blue
+	
+	&__item
+		position: relative
+		overflow: hidden
+	
+	&__activeLink
+		color: white
+		background: $color-blue
+	
+	&__items
+		position: relative
+	
+	&__list
+		position: absolute
+		opacity: 0
+		top: -100px
+		visibility: hidden
+		pointer-events: none
+		transition: all .3s
+		z-index: -1
+	
+	
+	&__active
+		position: relative
+		opacity: 1
+		visibility: visible
+		pointer-events: all
+		top: 0
+		z-index: 0
+	
+	&__title,
+	&__listItem
+		display: grid
+		grid-template-columns: .5fr 1.5fr
+	
+	&__title
+		position: relative
+		z-index: 1
+		background: $color-blue
+		color: white
+	
+	&__titleItem,
+	&__listTitle,
+	&__listItem
+		font-family: $FiraExtra
+	
+	
+	&__titleItem
+		font-size: 1.5rem
+		text-align: center
+		border: 1px solid $color-blue-dark
+		
+		p
+			margin: 1rem auto
+	
+	&__listTitle
+		border-right: 1px solid $color-blue-dark
+		text-align: center
+		padding: 1.3rem 0
+		
+		a
+			color: $color-blue-dark
+			text-decoration: underline
+			transition: all .3s
+			
+			&:hover
+				color: $color-orange
+	
+	&__listContent
+		border-left: 1px solid $color-blue-dark
+		font-family: $FiraSemi
+		padding: 1.3rem
+
+@media (max-width: 1024px)
+	.applicant
+		&__title
+			margin-top: 1rem
+
+@media (max-width: 576px)
+	.applicant
+		&__title
+			font-size: 1rem
+	.tab
+		&__title,
+		&__listItem
+			grid-template-columns: 1fr 1fr
+		
+		&__listTitle
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 5px
+		
+		&__listContent
+			padding: 5px
+		
+		&__nav
+			grid-template-columns: 1fr
+		
+		&__link,
+		&__titleItem,
+		&__listContent,
+		&__listTitle
+			font-size: 1rem
+
+@media (max-width: 428px)
+	.specialties
+		&__title
+			font-size: .8rem
+	.tab
+		&__link,
+		&__titleItem,
+		&__listContent,
+		&__listTitle
+			font-size: .8rem

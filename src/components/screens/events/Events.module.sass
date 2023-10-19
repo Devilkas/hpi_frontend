@@ -1,0 +1,106 @@
+@import "@/styles/var"
+.events
+	&__items
+		position: relative
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-gap: 1rem
+		margin: 0 1rem
+	
+	&__title
+		margin-top: 6rem
+		text-align: center
+		font-size: 2rem
+		position: relative
+		margin-bottom: 3rem
+		
+		h2
+			&:after
+				content: ""
+				position: absolute
+				width: 9rem
+				height: 0.4rem
+				background-color: #253b80
+				margin: auto
+				left: 0
+				right: 0
+				display: block
+	
+	&__item
+		position: relative
+		align-items: center
+		font-size: 1rem
+		background: rgba($color-blue, .3)
+		transition: all .3s
+		border-bottom-left-radius: 5px
+		border-bottom-right-radius: 5px
+		
+		&:hover
+			background: rgba($color-blue, .6)
+		
+		&__title
+			font-size: 1.2rem
+			margin-bottom: 1rem
+	
+	&__content
+		padding: 1rem
+		display: grid
+		align-content: center
+	
+	
+	&__date
+		margin-bottom: 1rem
+	
+	&__description
+		text-align: justify
+	
+	&__img
+		position: relative
+		width: 100%
+		height: auto
+		
+		img
+			position: relative
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+			border-top-left-radius: 5px
+			border-top-right-radius: 5px
+	
+	&__links
+		margin: 2rem auto
+		text-align: center
+		
+		button,
+		a
+			background: white
+			border: 2px solid $color-blue-dark
+			padding: 1rem
+			color: $color-blue-dark
+			border-radius: 5px
+			transition: all .3s
+			cursor: pointer
+			
+			&:hover
+				color: white
+				background: $color-blue-dark
+
+@media (max-width: 1024px)
+	.events
+		&__title
+			margin-top: 1rem
+		
+		&__items
+			grid-template-columns: 1fr 1fr
+
+//@media (max-width: 768px)
+
+@media (max-width: 576px)
+	.events
+		&__title
+			font-size: 1rem
+		
+		&__items
+			grid-template-columns: 1fr

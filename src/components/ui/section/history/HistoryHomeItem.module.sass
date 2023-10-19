@@ -1,0 +1,97 @@
+@import "@/styles/var"
+.history
+	position: relative
+	//margin: 5rem auto
+	
+	&__item
+		display: grid
+		grid-template-columns: 1fr 1fr
+		align-items: stretch
+		margin: 0 15rem
+		position: relative
+		
+		&:after
+			content: ""
+			display: block
+			position: absolute
+			width: 100%
+			height: 100%
+			background-color: $color-blue-dark
+		
+		&:nth-child(odd)
+			&:after
+				right: 100%
+		
+		&:nth-child(even)
+			&:after
+				left: 100%
+			
+			.history
+				&__description
+					order: 2
+				
+				&__img
+					order: 1
+	
+	&__description
+		background: rgba($color-blue, .3)
+		text-align: justify
+		padding: 0 3rem
+		display: flex
+		align-items: center
+	
+	&__img
+		position: relative
+		width: 100%
+		height: 100%
+		
+		img
+			position: relative
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+	
+	&__links
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		text-align: center
+		margin-top: 1rem
+		grid-gap: 5px
+		
+		a
+			color: white
+			background: rgba($color-blue, 1)
+			padding: 1rem 0
+			transition: all .3s
+			
+			&:hover
+				background: rgba($color-blue, .7)
+
+@media (max-width: 1024px)
+	.history
+		&__item
+			grid-template-columns: 1fr
+			margin: 0 2rem
+			
+			&:nth-child(odd)
+				&:after
+					right: 100%
+				.history
+					&__description
+						order: 2
+					
+					&__img
+						order: 1
+			
+			&:nth-child(even)
+				&:after
+					left: 100%
+				
+				.history
+					&__description
+						order: 2
+					
+					&__img
+						order: 1

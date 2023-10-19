@@ -1,0 +1,95 @@
+@import "@/styles/var"
+
+.footer
+	position: relative
+	background: $color-blue
+	color: #fff
+	text-align: center
+	margin-top: 10px
+	width: 100%
+	
+	&__row
+		padding: 10px
+	
+	&__copyright
+		padding: 10px 0
+		position: relative
+	
+	&__items
+		text-align: left
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		grid-gap: 2rem
+	
+	&__title
+		font-family: $FiraSemi
+		margin: 15px auto
+		font-size: 1.3rem
+	
+	&__content
+		font-size: .8rem
+	
+	&__menu
+		ul
+			display: flex
+			flex-direction: row
+			justify-content: center
+			align-items: center
+			
+			li
+				list-style: none
+				margin: 20px 0
+				
+				a
+					padding: 5px 10px
+					
+					&:hover
+						color: $color-orange
+	
+	&__address,
+	&__phones,
+	&__secretary
+		position: relative
+	
+	&__dark
+		background: $color-blue-dark
+		padding: 0
+	
+	&__form
+		padding: 0 2rem
+		border-left: 1px solid $color-orange
+		border-right: 1px solid $color-orange
+	
+	&__social
+		position: relative
+		display: flex
+		flex-direction: row
+	
+	&__item
+		position: relative
+		cursor: pointer
+		
+		object
+			filter: brightness(0) invert(1)
+			pointer-events: none
+			transition: all .3s
+		
+		&:hover
+			object
+				
+				opacity: .5
+
+
+@media (max-width: 768px)
+	.footer
+		&__items
+			grid-template-columns: repeat(1, 1fr)
+		
+		&__title
+			text-align: center
+		
+		&__content
+			text-align: justify
+		
+		&__social
+			justify-content: center
