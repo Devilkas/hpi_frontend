@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
+	// images: {
+	// 	remotePatterns: [
+	// 		{
+	// 			protocol: 'http',
+	// 			hostname: 'dev.sspu.sumy.ua',
+	// 			// port: '1337',
+	// 			pathname: '/uploads/**',
+	// 		},
+	// 		{
+	// 			protocol: 'https',
+	// 			hostname: 'images.pexels.com',
+	// 		}
+	// 	],
+	// },
 	async rewrites() {
 		return [
 			{

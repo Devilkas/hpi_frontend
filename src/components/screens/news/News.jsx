@@ -10,11 +10,11 @@ const News = ({items}) => {
 		return formattedDate.replace(/\//g, '.');
 	};
 	return (
-		<Layout title="Головна сторінка" description="asd asd" keywords="1,2,3" ogImage="asd">
+		<Layout title="Новини">
 			<div className="container-large">
 				<div className={styles.news}>
 					<div className={styles.news__title}>
-						<h2>Новини "Про інститут"</h2>
+						<h2>Новини</h2>
 					</div>
 					<div className={styles.news__items}>
 						

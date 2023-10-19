@@ -3,7 +3,7 @@ import Layout from "@/components/Layout/Layout";
 
 const HistoryOfTheInstitute = ({items}) => {
 	return (
-		<Layout title={items.data.attributes.Title} description={items.data.attributes.short_description}>
+		<Layout title={items.data.attributes.Title}>
 			<div className="container-large">
 				<div className={styles.page}>
 					<div className={styles.page__title}>

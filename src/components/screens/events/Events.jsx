@@ -10,7 +10,7 @@ const Sciences = ({items}) => {
 		return formattedDate.replace(/\//g, '.');
 	};
 	return (
-		<Layout title="Головна сторінка" description="asd asd" keywords="1,2,3" ogImage="asd">
+		<Layout title="Події">
 			<div className="container-large">
 				<div className={styles.events}>
 					<div className={styles.events__title}>

@@ -6,7 +6,7 @@ import SinglePageItems from "@/components/ui/single-page/SinglePageItems";
 
 const Contacts = ({items}) => {
 	return (
-		<Layout title={items.attributes.Title} description={items.attributes.Title}>
+		<Layout title={items.attributes.Title}>
 			<div className="container-small">
 				<div className={styles.contacts}>
 					<div className={styles.contacts__title}>

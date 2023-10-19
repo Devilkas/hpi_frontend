@@ -12,7 +12,7 @@ const Applicant = ({items}) => {
 		setActiveTab(index);
 	};
 	return (
-		<Layout title={items.attributes.Title} description={items.attributes.Title}>
+		<Layout title={items.attributes.Title}>
 			<div className="container-small">
 				<div className={styles.applicant}>
 					<div className={styles.applicant__title}>
