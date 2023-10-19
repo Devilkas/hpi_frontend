@@ -38,7 +38,7 @@ const Meta = ({title, description, keywords, ogImage, children}) => {
 					:
 					<meta property="og:image" content={`${process.env.HOST_URL || ""}/logo.png`}/>
 				}
-			
+				<link rel="shortcut icon" href={`${process.env.HOST_URL || ""}/favicon.ico`}/>
 			</Head>
 			<div className="wrapper">
 				{children}
