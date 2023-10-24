@@ -4,6 +4,7 @@ import Slider from "@/components/ui/slider/Slider";
 import Section from "@/components/ui/section/Section";
 
 const Home = ({slides, info, history, events, news, science}) => {
+	// console.log(info.items[1].list[0].attributes.site_url)
 	return (
 		<Layout title="Головна сторінка">
 			<div className="container-large">

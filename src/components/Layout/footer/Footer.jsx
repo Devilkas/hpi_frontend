@@ -6,20 +6,20 @@ import {FooterService} from "@/services/foorter.service";
 import {useRouter} from "next/router";
 
 const Footer = () => {
-	const [footerInfo, setFooterInfo] = useState(null)
-	const router = useRouter()
-	const {locale} = router
+	const [footerInfo, setFooterInfo] = useState(null);
+	const router = useRouter();
+	
 	useEffect(() => {
 		const fetchData = async (locale) => {
 			try {
 				const footer = await FooterService.getAll(locale);
 				setFooterInfo(footer.data.attributes.Footer);
 			} catch (error) {
-				console.error('Error fetching header:', error);
+				console.error('Error fetching footer:', error);
 			}
 		};
-		fetchData(locale);
-	}, []);
+		fetchData(router.locale);
+	}, [router.locale]); // Include router.locale in the dependency array
 	
 	const {id, title, send, ...inputs} = footerInfo?.contact_form || {};
 	return (

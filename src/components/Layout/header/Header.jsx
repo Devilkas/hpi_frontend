@@ -5,9 +5,9 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
 const Header = () => {
-	const [headerInfo, setHeaderInfo] = useState(null)
-	const router = useRouter()
-	const {locale} = router
+	const [headerInfo, setHeaderInfo] = useState(null);
+	const router = useRouter();
+	
 	useEffect(() => {
 		const fetchData = async (locale) => {
 			try {
@@ -17,8 +17,9 @@ const Header = () => {
 				console.error('Error fetching header:', error);
 			}
 		};
-		fetchData(locale);
-	}, []);
+		
+		fetchData(router.locale);
+	}, [router.locale]);
 	
 	return (
 		<header className={`header`}>
@@ -29,11 +30,16 @@ const Header = () => {
 			</div>
 			<div className={`container-large ${styles.header}`}>
 				<div className="header__row">
-					<Navbar withLogo={true} leftLinks={headerInfo?.items} rightLinks={headerInfo?.item}
-					        logo={headerInfo?.logo.data.attributes}/>
+					<Navbar
+						withLogo={true}
+						leftLinks={headerInfo?.items}
+						rightLinks={headerInfo?.item}
+						logo={headerInfo?.logo.data.attributes}
+					/>
 				</div>
 			</div>
 		</header>
-	)
-}
-export default Header
+	);
+};
+
+export default Header;

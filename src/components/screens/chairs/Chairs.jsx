@@ -23,7 +23,7 @@ const Chairs = ({items}) => {
 					<div className={styles.chairs__items}>
 						{items && items.map((item, index) => (
 							<div key={index} className={styles.chairs__item}>
-								<Link href={`${item.attributes.site_url || ""}`} className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
+								<Link target="_blank" href={`${item.attributes.site_url || ""}`} className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
 									<div className={styles.chairs__subtitle}>
 										<h3>{item.attributes.Title}</h3>
 									</div>

@@ -6,7 +6,7 @@ export const FooterService = {
 		const {data} = await axios.get('/footer', {
 			params: {
 				populate: "deep",
-				locale: `${locale}`
+				locale: locale
 			}
 		})
 		return data;

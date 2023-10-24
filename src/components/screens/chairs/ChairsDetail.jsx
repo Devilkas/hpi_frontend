@@ -23,7 +23,7 @@ const ChairsDetail = ({items}) => {
 					<div className={styles.chairs__items}>
 						{items && (
 							<div className={styles.chairs__item}>
-								<div className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
+								<Link target="_blank" href={`${items.data.attributes.site_url || ""}`} className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
 									<div className={styles.chairs__subtitle}>
 										<h3>{items.data.attributes.Title}</h3>
 									</div>
@@ -33,12 +33,13 @@ const ChairsDetail = ({items}) => {
 										       height={items.data.attributes.Logo.data[0].attributes.height}
 										       alt={items.data.attributes.Title}/>
 									</div>
-								</div>
+								</Link>
 								<div className={`${styles.chairs__info} ${styles.chairs__infoRight}`}>
 									<div className={styles.chairs__decription}>
 										<div className={styles.chairs__content}>
 											<div className={styles.chairs__headOfDepartment}>
-												<span className={styles.chairs__textBold}>{items.data.attributes.head_of_department_label}</span>
+												<span
+													className={styles.chairs__textBold}>{items.data.attributes.head_of_department_label}</span>
 												<span className={styles.chairs__text}>{items.data.attributes.head_of_department_value}</span>
 											</div>
 											<div className={styles.chairs__contancts}>

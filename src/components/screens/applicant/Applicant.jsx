@@ -55,7 +55,7 @@ const Applicant = ({items}) => {
 											</div>
 											{items.attributes.Degre.map((degree, index) => (
 												<div className={`${styles.tab__list} ${index === activeTab ? styles.tab__active : ''}`}
-												     data-degre={items.attributes.Degre[activeLink]?.Title}>
+												     data-degre={items.attributes.Degre[activeLink]?.Title} key={`${index}${degree.id}`}>
 													{degree.sp_pr.map((ep, index) => (
 														<div className={styles.tab__listItem} key={`${index}${ep.id}`}>
 															<div className={styles.tab__listTitle}>

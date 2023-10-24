@@ -29,7 +29,9 @@ const Sciences = ({items}) => {
 										className={`${styles.tab__link} ${index === activeLink ? styles.tab__activeLink : ''}`}
 										data-degre={items.attributes.degre[activeLink]?.Title}
 										onClick={() => handleTabClick(index)}
-										key={index}>{degree.Title}</button>
+										key={index}>
+										{degree.Title}
+									</button>
 								))}
 							</div>
 							<div className={styles.tab__items}>
@@ -44,11 +46,12 @@ const Sciences = ({items}) => {
 									</div>
 									{items.attributes.degre.map((degree, index) => (
 										<div className={`${styles.tab__list} ${index === activeTab ? styles.tab__active : ''}`}
-										     data-degre={items.attributes.degre[activeLink]?.Title}>
+										     data-degre={items.attributes.degre[activeLink]?.Title} key={`${index}${degree.id}`}>
 											{degree.sp_pr.map((ep, index) => (
 												<div className={styles.tab__listItem} key={`${index}${ep.id}`}>
 													<div className={styles.tab__listTitle}>
-														<Link href={`/specialties/${ep.specialty.data.id}`}>{ep.specialty.data.attributes.Title}</Link>
+														<Link
+															href={`/specialties/${ep.specialty.data.id}`}>{ep.specialty.data.attributes.Title}</Link>
 													</div>
 													<div className={styles.tab__listContent}>
 														<p>{ep.program}</p>

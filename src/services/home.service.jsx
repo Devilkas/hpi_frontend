@@ -6,7 +6,7 @@ export const HomeService = {
 		const {data} = await axios.get('/home', {
 			params: {
 				populate: 'deep',
-				locale: "ua"
+				locale: locale
 			}
 		})
 		return data;

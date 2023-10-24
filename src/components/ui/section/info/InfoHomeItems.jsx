@@ -39,8 +39,13 @@ const InfoHomeItems = ({content}) => {
 									item.title === "Спеціальності"
 										? `/specialties/${listItem.id}`
 										: item.title === "Кафедри"
-											? listItem.site_url || ""
+											? listItem.attributes.site_url || ""
 											: ""
+								}
+								target={
+									(listItem.attributes.site_url)
+										? "_blank"
+										: ""
 								}
 								key={listIndex}
 							>
