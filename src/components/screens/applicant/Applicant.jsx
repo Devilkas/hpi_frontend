@@ -3,7 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import {useState} from "react";
 
-const Applicant = ({items}) => {
+const Applicant = ({items, header_items, footer_items}) => {
 	const [activeLink, setActiveLink] = useState(0);
 	const [activeTab, setActiveTab] = useState(0);
 	
@@ -12,7 +12,7 @@ const Applicant = ({items}) => {
 		setActiveTab(index);
 	};
 	return (
-		<Layout title={items.attributes.Title}>
+		<Layout title={items.attributes.Title} header_items={header_items} footer_items={footer_items}>
 			<div className="container-small">
 				<div className={styles.applicant}>
 					<div className={styles.applicant__title}>

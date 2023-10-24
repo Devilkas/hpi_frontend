@@ -3,10 +3,10 @@ import Layout from "@/components/Layout/Layout";
 import Slider from "@/components/ui/slider/Slider";
 import Section from "@/components/ui/section/Section";
 
-const Home = ({slides, info, history, events, news, science}) => {
-	// console.log(info.items[1].list[0].attributes.site_url)
+const Home = ({slides, info, history, events, news, science, header_items, footer_items}) => {
 	return (
-		<Layout title="Головна сторінка">
+		<Layout title="Головна сторінка" header_items={header_items}
+		        footer_items={footer_items}>
 			<div className="container-large">
 				<div className="main__row">
 					<Slider slides={slides} nav={false} autoplay={true} slideInterval={4000}/>

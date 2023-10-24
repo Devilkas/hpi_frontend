@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import SinglePageItems from "@/components/ui/single-page/SinglePageItems";
 
-const Contacts = ({items}) => {
+const Contacts = ({items, header_items, footer_items}) => {
 	return (
-		<Layout title={items.attributes.Title}>
+		<Layout title={items.attributes.Title} header_items={header_items} footer_items={footer_items}>
 			<div className="container-small">
 				<div className={styles.contacts}>
 					<div className={styles.contacts__title}>

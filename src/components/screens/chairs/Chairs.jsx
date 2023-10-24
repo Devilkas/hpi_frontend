@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {useState} from "react";
 
-const Chairs = ({items}) => {
+const Chairs = ({items, header_items, footer_items}) => {
 	const [activeLink, setActiveLink] = useState(0);
 	const [activeTab, setActiveTab] = useState(0);
 	
@@ -14,7 +14,7 @@ const Chairs = ({items}) => {
 	};
 	
 	return (
-		<Layout title="Кафедри">
+		<Layout title="Кафедри" header_items={header_items} footer_items={footer_items}>
 			<div className="container-large">
 				<div className={styles.chairs}>
 					<div className={styles.chairs__title}>

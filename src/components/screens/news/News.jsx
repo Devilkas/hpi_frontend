@@ -3,14 +3,14 @@ import styles from './News.module.sass'
 import Layout from "@/components/Layout/Layout";
 import Image from "next/image";
 
-const News = ({items}) => {
+const News = ({items, header_items, footer_items}) => {
 	const formatDate = (dateString) => {
 		const options = {day: '2-digit', month: '2-digit', year: 'numeric'};
 		const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
 		return formattedDate.replace(/\//g, '.');
 	};
 	return (
-		<Layout title="Новини">
+		<Layout title="Новини" header_items={header_items} footer_items={footer_items}>
 			<div className="container-large">
 				<div className={styles.news}>
 					<div className={styles.news__title}>

@@ -4,7 +4,7 @@ import SinglePageItems from "@/components/ui/single-page/SinglePageItems";
 import Link from "next/link";
 import {useState} from "react";
 
-const Sciences = ({items}) => {
+const Sciences = ({items, header_items, footer_items}) => {
 	const [activeLink, setActiveLink] = useState(0);
 	const [activeTab, setActiveTab] = useState(0);
 	
@@ -13,7 +13,7 @@ const Sciences = ({items}) => {
 		setActiveTab(index);
 	};
 	return (
-		<Layout title={items.attributes.Title} description={items.attributes.Description}>
+		<Layout title={items.attributes.Title} description={items.attributes.Description}  header_items={header_items} footer_items={footer_items}>
 			<div className="container-small">
 				<div className={styles.specialties}>
 					<div className={styles.specialties__title}>

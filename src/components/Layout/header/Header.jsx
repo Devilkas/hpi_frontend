@@ -4,22 +4,21 @@ import {HeaderService} from "@/services/header.service";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 
-const Header = () => {
-	const [headerInfo, setHeaderInfo] = useState(null);
-	const router = useRouter();
-	
-	useEffect(() => {
-		const fetchData = async (locale) => {
-			try {
-				const header = await HeaderService.getAll(locale);
-				setHeaderInfo(header.data.attributes.Header);
-			} catch (error) {
-				console.error('Error fetching header:', error);
-			}
-		};
-		
-		fetchData(router.locale);
-	}, [router.locale]);
+const Header = ({headerInfo}) => {
+	// const [headerInfo, setHeaderInfo] = useState(null);
+	// const router = useRouter();
+	//
+	// useEffect(() => {
+	// 	const fetchData = async (locale) => {
+	// 		try {
+	// 			const header = await HeaderService.getAll(locale);
+	// 			setHeaderInfo(header.data.attributes.Header);
+	// 		} catch (error) {
+	// 			console.error('Error fetching header:', error);
+	// 		}
+	// 	};
+	// 	fetchData(router.locale);
+	// }, [router.locale]);
 	
 	return (
 		<header className={`header`}>

@@ -1,9 +1,9 @@
 import styles from './HistoryOfTheInstitute.module.sass'
 import Layout from "@/components/Layout/Layout";
 
-const HistoryOfTheInstitute = ({items}) => {
+const HistoryOfTheInstitute = ({items, header_items, footer_items}) => {
 	return (
-		<Layout title={items.data.attributes.Title}>
+		<Layout title={items.data.attributes.Title} header_items={header_items} footer_items={footer_items}>
 			<div className="container-large">
 				<div className={styles.page}>
 					<div className={styles.page__title}>
