@@ -35,7 +35,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 						</ul>
 					</>
 				) : (
-					<Link href={`${link.URL}`}>
+					<Link href={link.URL.startsWith('http') ? link.URL : `/${link.URL}`}>
 						{link.title}
 					</Link>
 				)}
