@@ -14,8 +14,7 @@ const Form = ({inputs, butName}) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const items = await MessagesService.sendMessage(formData);
-			// console.log(items)
+			await MessagesService.sendMessage(formData);
 			MySwal.fire({
 				title: <strong>Повідомлення успішно надіслано</strong>,
 				// html: <i>You clicked the button!</i>,

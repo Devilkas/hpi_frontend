@@ -3,19 +3,22 @@ import Form from "@/components/ui/form/Form";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {FooterService} from "@/services/foorter.service";
+import {useRouter} from "next/router";
 
 const Footer = () => {
 	const [footerInfo, setFooterInfo] = useState(null)
+	const router = useRouter()
+	const {locale} = router
 	useEffect(() => {
-		const fetchData = async () => {
+		const fetchData = async (locale) => {
 			try {
-				const footer = await FooterService.getAll();
+				const footer = await FooterService.getAll(locale);
 				setFooterInfo(footer.data.attributes.Footer);
 			} catch (error) {
 				console.error('Error fetching header:', error);
 			}
 		};
-		fetchData();
+		fetchData(locale);
 	}, []);
 	
 	const {id, title, send, ...inputs} = footerInfo?.contact_form || {};

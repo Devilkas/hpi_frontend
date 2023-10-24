@@ -1,20 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	// images: {
-	// 	remotePatterns: [
-	// 		{
-	// 			protocol: 'http',
-	// 			hostname: 'dev.sspu.sumy.ua',
-	// 			// port: '1337',
-	// 			pathname: '/uploads/**',
-	// 		},
-	// 		{
-	// 			protocol: 'https',
-	// 			hostname: 'images.pexels.com',
-	// 		}
-	// 	],
-	// },
+	env: {
+		API_URL: process.env.API_URL
+	},
+	i18n: {
+		locales: ["ua", "en"],
+		defaultLocale: "ua",
+		localeDetection: false,
+	},
+	trailingSlash: true,
 	async rewrites() {
 		return [
 			{
@@ -46,9 +41,6 @@ const nextConfig = {
 				destination: '/applicant',
 			}
 		]
-	},
-	env: {
-		API_URL: process.env.API_URL
 	},
 }
 

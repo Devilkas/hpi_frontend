@@ -5,8 +5,9 @@ const ContactsPage = ({items}) => {
 	
 	return <Students items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await StudentsService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await StudentsService.getAll(locale)
 	return {
 		props: {
 			items: items.data

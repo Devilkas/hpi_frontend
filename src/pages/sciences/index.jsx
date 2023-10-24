@@ -5,8 +5,9 @@ const SciencesPage = ({items}) => {
 	
 	return <Sciences items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await SciencesService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await SciencesService.getAll(locale)
 	return {
 		props: {
 			items: items

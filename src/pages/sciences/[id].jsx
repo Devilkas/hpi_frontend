@@ -16,8 +16,9 @@ export const getStaticPaths = async () => {
 		fallback: 'blocking',
 	}
 }
-export const getStaticProps = async ({params}) => {
-	const items = await SciencesService.getById(String(params?.id))
+export const getStaticProps = async (context) => {
+	const {params, locale} = context
+	const items = await SciencesService.getById(String(params?.id), locale)
 	return {
 		props: {
 			items: items

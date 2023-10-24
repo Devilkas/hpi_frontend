@@ -4,8 +4,9 @@ import HistoryOfTheInstitute from "@/components/screens/history-of-the-institute
 const HistoryOfTheInstitutePage = ({items}) => {
 	return <HistoryOfTheInstitute items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await HistoryOfTheInstituteService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await HistoryOfTheInstituteService.getAll(locale)
 	return {
 		props: {
 			items: items

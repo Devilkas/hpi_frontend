@@ -5,8 +5,9 @@ const EventsPage = ({items}) => {
 	
 	return <Events items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await EventsService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await EventsService.getAll(locale)
 	return {
 		props: {
 			items: items

@@ -2,21 +2,24 @@ import styles from './Header.module.sass'
 import Navbar from "@/components/ui/navbar/Navbar";
 import {HeaderService} from "@/services/header.service";
 import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
 
 const Header = () => {
 	const [headerInfo, setHeaderInfo] = useState(null)
+	const router = useRouter()
+	const {locale} = router
 	useEffect(() => {
-		const fetchData = async () => {
+		const fetchData = async (locale) => {
 			try {
-				const header = await HeaderService.getAll();
+				const header = await HeaderService.getAll(locale);
 				setHeaderInfo(header.data.attributes.Header);
 			} catch (error) {
 				console.error('Error fetching header:', error);
 			}
 		};
-		fetchData();
+		fetchData(locale);
 	}, []);
-
+	
 	return (
 		<header className={`header`}>
 			<div className="container-w100">

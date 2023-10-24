@@ -5,8 +5,9 @@ const NewsPage = ({items}) => {
 	
 	return <News items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await NewsService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await NewsService.getAll(locale)
 	return {
 		props: {
 			items: items

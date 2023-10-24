@@ -1,13 +1,15 @@
 import Home from "@/components/screens/home/Home";
 import {HomeService} from "@/services/home.service";
+// import {useRouter} from "next/router";
 
 
 const HomePage = ({slides, info, history, events, news, science}) => {
 	return <Home slides={slides} info={info} history={history} events={events} news={news} science={science}/>
 }
 
-export const getStaticProps = async () => {
-	const homeItems = await HomeService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const homeItems = await HomeService.getAll(locale)
 	return {
 		props: {
 			slides: homeItems.data.attributes.Slider.Slide,

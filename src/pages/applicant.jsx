@@ -5,8 +5,9 @@ const ApplicantPage = ({items}) => {
 	
 	return <Applicant items={items}/>
 }
-export const getStaticProps = async () => {
-	const items = await ApplicantService.getAll()
+export const getStaticProps = async (context) => {
+	const {locale} = context
+	const items = await ApplicantService.getAll(locale)
 	return {
 		props: {
 			items: items.data
