@@ -1,0 +1,51 @@
+@import "@/styles/var"
+
+.students
+	padding: 0 1rem
+	
+	&__title
+		margin-top: 6rem
+		text-align: center
+		font-size: 2rem
+		position: relative
+		margin-bottom: 3rem
+		
+		h2
+			&:after
+				content: ""
+				position: absolute
+				width: 9rem
+				height: 0.4rem
+				background-color: $color-blue
+				margin: auto
+				left: 0
+				right: 0
+				display: block
+	
+	&__content
+		position: relative
+		h3
+			font-size: 2rem
+		li
+			position: relative
+			margin-left: 1rem
+			a
+				color: $color-blue-dark
+				text-decoration: underline
+				transition: all .3s
+				
+				&:hover
+					color: $color-orange
+			
+			p
+				padding-left: 1rem
+			
+@media (max-width: 1024px)
+	.students
+		&__title
+			margin-top: 1rem
+
+@media (max-width: 576px)
+	.students
+		&__title
+			font-size: 1rem

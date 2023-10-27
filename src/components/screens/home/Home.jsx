@@ -17,6 +17,7 @@ const Home = ({slides, info, history, events, news, science, header_items, foote
 					<Section category="science" title={science.main_title} content={science.items}/>
 				</div>
 			</div>
+			<a className="btn" href="#">TEst</a>
 		</Layout>
 	)
 }
