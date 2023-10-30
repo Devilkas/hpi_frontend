@@ -4,6 +4,7 @@ import {HeaderService} from "@/services/header.service";
 import {FooterService} from "@/services/foorter.service";
 import ErrorPage from "next/error";
 
+const REVALIDATE_TIME = Number(process.env.REVALIDATE_TIME);
 const ContactsPage = ({items, header_items, footer_items, no_data = false}) => {
 	if (no_data) {
 		return <ErrorPage statusCode={404}/>
@@ -30,7 +31,7 @@ export const getStaticProps = async (context) => {
 			footer_items: footer.data.attributes.Footer,
 			items: items.data
 		},
-		revalidate: process.env.REVALIDATE_TIME,
+		revalidate: REVALIDATE_TIME,
 	}
 }
 export default ContactsPage
