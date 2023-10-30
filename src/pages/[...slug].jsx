@@ -45,7 +45,7 @@ const DynamicPage = ({items, header_items, footer_items, no_data = false}) => {
 // 			footer_items: footer.data.attributes.Footer,
 // 			items: items
 // 		},
-// 		revalidate: 60,
+// 		revalidate: process.env.REVALIDATE_TIME,
 // 	}
 // }
 

@@ -89,7 +89,7 @@ export const getStaticProps = async (context) => {
 				items: items.data.attributes.sciences.data,
 			},
 		},
-		revalidate: 60,
+		revalidate: process.env.REVALIDATE_TIME,
 	}
 }
 export default HomePage

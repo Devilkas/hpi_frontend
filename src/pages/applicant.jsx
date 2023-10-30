@@ -30,7 +30,7 @@ export const getStaticProps = async (context) => {
 			footer_items: footer.data.attributes.Footer,
 			items: items.data
 		},
-		revalidate: 60,
+		revalidate: process.env.REVALIDATE_TIME,
 	}
 }
 export default ApplicantPage
