@@ -14,7 +14,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/uploads/:path*',
-				destination: `https://dev.sspu.sumy.ua/uploads/:path*`,
+				destination: `https://api.dev.sspu.sumy.ua/uploads/:path*`,
 			},
 			{
 				source: '/kafedry/:path*',
