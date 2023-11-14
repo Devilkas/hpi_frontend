@@ -12,7 +12,7 @@ const EventHomeItems = ({content}) => {
 		<div className={`section__events ${styles.events}`}>
 			{/*{content && content.slice(0, 4).map((item, index) => (*/}
 			{content && content.map((item, index) => (
-				<Link href={`/events/${item.id}`} className={`${styles.events__item}`} key={index}>
+				<Link href={`/events/${item.attributes.seo_url}`} className={`${styles.events__item}`} key={index}>
 					<div className={styles.events__date}>
 						<p>{formatDate(item.attributes.publishedAt)}</p>
 					</div>

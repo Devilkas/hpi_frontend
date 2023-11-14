@@ -30,7 +30,8 @@ export const SpecialtiesService = {
 	},
 	async getById(id, locale) {
 		try {
-			const {data} = await axios.get(`/specialties/${id}`, {
+			const {data} = await axios.get(`/specialties/?filters[seo_url][$eq]=${id}`, {
+			// const {data} = await axios.get(`/specialties/${id}`, {
 				params: {
 					populate: 'deep',
 					locale: locale

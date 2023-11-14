@@ -18,7 +18,8 @@ export const EventsService = {
 	},
 	async getById(id, locale) {
 		try {
-			const {data} = await axios.get(`/events/${id}`,  {
+			const {data} = await axios.get(`/events/?filters[seo_url][$eq]=${id}`,  {
+			// const {data} = await axios.get(`/events/${id}`,  {
 				params: {
 					populate: 'deep',
 					locale: locale

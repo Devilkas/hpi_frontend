@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SinglePageItems = ({section, content, btnName, isSingle}) => {
 	let data = {};
-	isSingle ? (data = content.data) : (data = content);
+	isSingle ? (data = content.data[0]) : (data = content);
 	const router = useRouter();
 	const formatDate = (dateString) => {
 		const options = {day: '2-digit', month: '2-digit', year: 'numeric'};
@@ -18,7 +18,7 @@ const SinglePageItems = ({section, content, btnName, isSingle}) => {
 			<div className={`section__page ${styles.page} ${isSingle ? styles.page__single : ""}`}>
 				{isSingle ? (
 					<div className={`${styles.page__item}`}>
-						{data.attributes.publishedAt &&
+						{data.attributes?.publishedAt &&
 							<div className={styles.page__date}>
 								<h4>{formatDate(data.attributes.publishedAt)}</h4>
 							</div>
@@ -30,7 +30,7 @@ const SinglePageItems = ({section, content, btnName, isSingle}) => {
 								       height={data.attributes.Image.data.attributes.height}/>
 							</div>
 						}
-						{data.attributes.description !== undefined && data.attributes.description !== "" && (
+						{data.attributes?.description !== undefined && data.attributes.description !== "" && (
 							<div className={styles.page__content}>
 								<div className={styles.page__description}>
 									<p>{data.attributes.description}</p>

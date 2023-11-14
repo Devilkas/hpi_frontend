@@ -17,7 +17,8 @@ export const ChairsService = {
 	},
 	async getById(id, locale) {
 		try {
-			const {data} = await axios.get(`/chairs/${id}`, {
+			const {data} = await axios.get(`/chairs/?filters[seo_url][$eq]=${id}`, {
+			// const {data} = await axios.get(`/chairs/${id}`, {
 				params: {
 					populate: 'deep',
 					locale: locale

@@ -89,7 +89,7 @@ const ChairsDetail = ({items, header_items, footer_items}) => {
 																<div className={styles.tab__listItem} key={`${index}${ep.id}`}>
 																	<div className={styles.tab__listTitle}>
 																		<Link
-																			href={`/specialties/${ep.specialty.data.id}`}>{ep.specialty.data.attributes.Title}</Link>
+																			href={`/specialties/${ep.specialty.data.attributes.seo_url}`}>{ep.specialty.data.attributes.Title}</Link>
 																	</div>
 																	<div className={styles.tab__listContent}>
 																		<p>{ep.program}</p>

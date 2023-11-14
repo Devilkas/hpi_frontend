@@ -20,7 +20,7 @@ const Events = ({items, header_items, footer_items}) => {
 						
 						{items.data.length ? <>
 							{items.data && items.data.map((item, index) => (
-								<Link href={`/events/${item.id}`} className={`${styles.events__item}`} key={index}>
+								<Link href={`/events/${item.attributes.seo_url}`} className={`${styles.events__item}`} key={index}>
 									<div className={styles.events__img}>
 										<Image src={item.attributes.Image.data.attributes.url} alt={item.attributes.Title}
 										       width={item.attributes.Image.data.attributes.width}

@@ -20,7 +20,7 @@ const Sciences = ({items, header_items, footer_items}) => {
 						
 						{items.data.length ? <>
 							{items.data && items.data.map((item, index) => (
-								<Link href={`/sciences/${item.id}`} className={`${styles.sciences__item}`} key={index}>
+								<Link href={`/sciences/${item.attributes.seo_url}`} className={`${styles.sciences__item}`} key={index}>
 									<div className={styles.sciences__img}>
 										<Image src={item.attributes.Image.data.attributes.url} alt={item.attributes.Title}
 										       width={item.attributes.Image.data.attributes.width}

@@ -37,7 +37,7 @@ const InfoHomeItems = ({content}) => {
 								className={styles.info__list__item}
 								href={
 									item.title === "Спеціальності"
-										? `/specialties/${listItem.id}`
+										? `/specialties/${listItem.attributes.seo_url}`
 										: item.title === "Кафедри"
 											? listItem.attributes.site_url || ""
 											: ""
