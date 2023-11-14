@@ -15,10 +15,10 @@ export const ChairsService = {
 			return "noData"
 		}
 	},
-	async getById(id, locale) {
+	async getById(slug, locale) {
 		try {
-			const {data} = await axios.get(`/chairs/?filters[seo_url][$eq]=${id}`, {
 			// const {data} = await axios.get(`/chairs/${id}`, {
+			const {data} = await axios.get(`/chairs/?filters[seo_url][$eq]=${slug}`, {
 				params: {
 					populate: 'deep',
 					locale: locale

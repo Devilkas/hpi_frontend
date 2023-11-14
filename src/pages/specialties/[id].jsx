@@ -18,7 +18,7 @@ export const getStaticPaths = async (context) => {
 	return {
 		paths: item.data.map(items => ({
 			params: {
-				id: items.id.toString()
+				id: items.attributes.seo_url.toString()
 			}
 		})),
 		fallback: 'blocking',

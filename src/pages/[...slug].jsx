@@ -19,7 +19,7 @@ const DynamicPage = ({items, header_items, footer_items, no_data = false}) => {
 // 	return {
 // 		paths: item.data.map(items => ({
 // 			params: {
-// 				id: items.id.toString()
+// 				id: items.attributes.seo_url.toString()
 // 			}
 // 		})),
 // 		fallback: 'blocking',

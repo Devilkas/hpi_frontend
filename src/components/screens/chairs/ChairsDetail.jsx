@@ -7,31 +7,30 @@ import {useState} from "react";
 const ChairsDetail = ({items, header_items, footer_items}) => {
 	const [activeLink, setActiveLink] = useState(0);
 	const [activeTab, setActiveTab] = useState(0);
-	
+	const item = items.data[0];
 	const handleTabClick = (index) => {
 		setActiveLink(index);
 		setActiveTab(index);
 	};
-	
 	return (
 		<Layout title="Кафедри" header_items={header_items} footer_items={footer_items}>
 			<div className="container-large">
 				<div className={styles.chairs}>
 					<div className={styles.chairs__title}>
-						<h2>Кафедра {items.data.attributes.Title}</h2>
+						<h2>Кафедра {item.attributes.Title}</h2>
 					</div>
 					<div className={styles.chairs__items}>
 						{items && (
 							<div className={styles.chairs__item}>
-								<Link target="_blank" href={`${items.data.attributes.site_url || ""}`} className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
+								<Link target="_blank" href={`${item.attributes.site_url || ""}`} className={`${styles.chairs__info} ${styles.chairs__infoLeft}`}>
 									<div className={styles.chairs__subtitle}>
-										<h3>{items.data.attributes.Title}</h3>
+										<h3>{item.attributes.Title}</h3>
 									</div>
 									<div className={styles.chairs__logo}>
-										<Image src={items.data.attributes.Logo.data[0].attributes.url}
-										       width={items.data.attributes.Logo.data[0].attributes.width}
-										       height={items.data.attributes.Logo.data[0].attributes.height}
-										       alt={items.data.attributes.Title}/>
+										<Image src={item.attributes.Logo.data[0].attributes.url}
+										       width={item.attributes.Logo.data[0].attributes.width}
+										       height={item.attributes.Logo.data[0].attributes.height}
+										       alt={item.attributes.Title}/>
 									</div>
 								</Link>
 								<div className={`${styles.chairs__info} ${styles.chairs__infoRight}`}>
@@ -39,35 +38,35 @@ const ChairsDetail = ({items, header_items, footer_items}) => {
 										<div className={styles.chairs__content}>
 											<div className={styles.chairs__headOfDepartment}>
 												<span
-													className={styles.chairs__textBold}>{items.data.attributes.head_of_department_label}</span>
-												<span className={styles.chairs__text}>{items.data.attributes.head_of_department_value}</span>
+													className={styles.chairs__textBold}>{item.attributes.head_of_department_label}</span>
+												<span className={styles.chairs__text}>{item.attributes.head_of_department_value}</span>
 											</div>
 											<div className={styles.chairs__contancts}>
-												<span className={styles.chairs__textBold}>{items.data.attributes.contacts_label}</span>
-												<span className={styles.chairs__text}>{items.data.attributes.contacts_value}</span>
+												<span className={styles.chairs__textBold}>{item.attributes.contacts_label}</span>
+												<span className={styles.chairs__text}>{item.attributes.contacts_value}</span>
 											</div>
 											<div className={styles.chairs__email}>
-												<span className={styles.chairs__textBold}>{items.data.attributes.email_label}</span>
-												<Link href={`mailto:${items.data.attributes.email_value}`}
-												      className={styles.chairs__text}>{items.data.attributes.email_value}</Link>
+												<span className={styles.chairs__textBold}>{item.attributes.email_label}</span>
+												<Link href={`mailto:${item.attributes.email_value}`}
+												      className={styles.chairs__text}>{item.attributes.email_value}</Link>
 											</div>
 											<p
-												className={styles.chairs__textBold}>{items.data.attributes.conducts_training_in_specialties_label}</p>
+												className={styles.chairs__textBold}>{item.attributes.conducts_training_in_specialties_label}</p>
 										</div>
 										<div className={styles.chairs__img}>
-											<Image src={items.data.attributes.avatar.data[0].attributes.url}
-											       width={items.data.attributes.avatar.data[0].attributes.width}
-											       height={items.data.attributes.avatar.data[0].attributes.height}
-											       alt={items.data.attributes.avatar.data[0].attributes.name}/>
+											<Image src={item.attributes.avatar.data[0].attributes.url}
+											       width={item.attributes.avatar.data[0].attributes.width}
+											       height={item.attributes.avatar.data[0].attributes.height}
+											       alt={item.attributes.avatar.data[0].attributes.name}/>
 										</div>
 									</div>
-									{items.data.attributes.degre && (
+									{item.attributes.degre && (
 										<div className={styles.tab}>
 											<div className={styles.tab__nav}>
-												{items.data.attributes.degre.map((degree, index) => (
+												{item.attributes.degre.map((degree, index) => (
 													<button
 														className={`${styles.tab__link} ${index === activeLink ? styles.tab__activeLink : ''}`}
-														data-degre={items.data.attributes.degre[activeLink]?.Title}
+														data-degre={item.attributes.degre[activeLink]?.Title}
 														onClick={() => handleTabClick(index)}
 														key={index}>{degree.Title}</button>
 												))}
@@ -82,9 +81,9 @@ const ChairsDetail = ({items, header_items, footer_items}) => {
 															<p>Освітня програма</p>
 														</div>
 													</div>
-													{items.data.attributes.degre.map((degree, index) => (
+													{item.attributes.degre.map((degree, index) => (
 														<div className={`${styles.tab__list} ${index === activeTab ? styles.tab__active : ''}`}
-														     data-degre={items.data.attributes.degre[activeLink]?.Title} key={index}>
+														     data-degre={item.attributes.degre[activeLink]?.Title} key={index}>
 															{degree.sp_pr.map((ep, index) => (
 																<div className={styles.tab__listItem} key={`${index}${ep.id}`}>
 																	<div className={styles.tab__listTitle}>

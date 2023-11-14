@@ -18,7 +18,8 @@ export const getStaticPaths = async (context) => {
 	return {
 		paths: item.data.map(items => ({
 			params: {
-				id: items.id.toString(),
+				// id: items.id.toString(),
+				id: items.attributes.seo_url.toString(),
 				locale: locale
 			},
 		})),
@@ -30,7 +31,6 @@ export const getStaticProps = async (context) => {
 	const header = await HeaderService.getAll(locale);
 	const footer = await FooterService.getAll(locale);
 	const items = await ChairsService.getById(String(params?.id), locale)
-	
 	if (header === "noData" || footer === "noData" || items === "noData") {
 		return {
 			props: {
