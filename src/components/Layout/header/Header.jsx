@@ -19,7 +19,6 @@ const Header = ({headerInfo}) => {
 	// 	};
 	// 	fetchData(router.locale);
 	// }, [router.locale]);
-	
 	return (
 		<header className={`header`}>
 			<div className="container-w100">
@@ -31,9 +30,9 @@ const Header = ({headerInfo}) => {
 				<div className="header__row">
 					<Navbar
 						withLogo={true}
-						leftLinks={headerInfo?.items}
-						rightLinks={headerInfo?.item}
-						logo={headerInfo?.logo.data.attributes}
+						leftLinks={headerInfo?.menus[0]}
+						rightLinks={headerInfo?.menus[1]}
+						logo={headerInfo?.logo}
 					/>
 				</div>
 			</div>

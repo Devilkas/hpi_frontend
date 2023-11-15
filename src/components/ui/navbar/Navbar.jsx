@@ -19,24 +19,32 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 		setIsSubMenuOpen(updatedSubMenuOpen);
 	};
 	
-	
 	const renderLinks = (linksData) => {
+		// linksData.map((link, index) => {
+		// 	console.log("link",link)
+		// 	{link.attributes.children.data.length > 0 ?
+		// 		renderLinks(link.attributes.children.data):
+		// 		""
+		// 	}
+		// })
+		console.log("pathname",pathname)
 		return linksData.map((link, index) => (
-			<li key={index} className={pathname === link.path ? styles.menu__linkActive : ''}>
-				{link.children ? (
+			<li key={index}
+			    className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>
+				{link.attributes.children.data.length > 0 ? (
 					<>
 						<span className={`${styles.menu__subLink} `}
 						      onClick={() => toggleSubMenu(index)}>
-							{link.label}
+							{link.attributes.title}
 						</span>
 						<span className={styles.menu__arrow}></span>
 						<ul className={`${styles.menu__subList} ${isSubMenuOpen[index] ? styles.menu__subLinkActive : ''}`}>
-							{renderLinks(link.children)}
+							{renderLinks(link.attributes.children.data)}
 						</ul>
 					</>
 				) : (
-					<Link href={link.URL?.startsWith('http') ? link.URL : `/${link.URL}`}>
-						{link.title}
+					<Link href={link.attributes.url}>
+						{link.attributes.title}
 					</Link>
 				)}
 			</li>
@@ -46,7 +54,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 	const renderWithLogo = () => (
 		<>
 			<ul className={styles.menu__list}>
-				{renderLinks(leftLinks)}
+				{renderLinks(leftLinks.attributes.items.data)}
 			</ul>
 			<Link href="/" className={styles.logo}>
 				<Image
@@ -58,14 +66,14 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 				/>
 			</Link>
 			<ul className={styles.menu__list}>
-				{renderLinks(rightLinks)}
+				{renderLinks(rightLinks.attributes.items.data)}
 			</ul>
 		</>
 	);
 	
 	const renderWithOutLogo = () => (
 		<ul className={styles.menu__list}>
-			{renderLinks(leftLinks)}
+			{renderLinks(leftLinks.attributes.items.data)}
 		</ul>
 	);
 	

@@ -10,11 +10,11 @@ const Home = ({slides, info, history, events, news, science, header_items, foote
 			<div className="container-large">
 				<div className="main__row">
 					<Slider slides={slides} nav={false} autoplay={true} slideInterval={4000}/>
-					<Section category="info" title={info.main_title} content={info.items}/>
-					<Section category="history" title={history.main_title} content={history.items} links={history.links}/>
-					<Section category="events" title={events.main_title} content={events.items}/>
-					<Section category="news" title={news.main_title} content={news.items}/>
-					<Section category="science" title={science.main_title} content={science.items}/>
+					{/*<Section category="info" title={info.main_title} content={info.items}/>*/}
+					{/*<Section category="history" title={history.main_title} content={history.items} links={history.links}/>*/}
+					{/*<Section category="events" title={events.main_title} content={events.items}/>*/}
+					{/*<Section category="news" title={news.main_title} content={news.items}/>*/}
+					{/*<Section category="science" title={science.main_title} content={science.items}/>*/}
 				</div>
 			</div>
 		</Layout>

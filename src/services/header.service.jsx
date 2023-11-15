@@ -4,8 +4,9 @@ axios.defaults.baseURL = process.env.API_URL;
 export const HeaderService = {
 	async getAll(locale) {
 		try {
-			const {data} = await axios.get('/header', {
+			const {data} = await axios.get('/menus', {
 				params: {
+					nested:"",
 					populate: 'deep',
 					locale: locale
 				}
