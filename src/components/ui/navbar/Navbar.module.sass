@@ -4,7 +4,13 @@
 	width: 100%
 	
 	&__arrow
-		display: none
+		margin: 0 0 0 5px
+		transition: transform .3s ease 0s
+		border-top: 5px solid #fff
+		border-right: 5px solid transparent
+		border-left: 5px solid transparent
+		position: absolute
+		top: 45%
 	
 	&__icon
 		z-index: 5
@@ -58,7 +64,7 @@
 		justify-items: center
 		height: 5vw
 		font-size: 1vw
-		//height: 5rem
+	//height: 5rem
 	
 	&__list
 		display: flex
@@ -142,7 +148,11 @@
 		background: $color-blue
 		border-radius: 50%
 		padding: 1vw
-		//padding: 15px
+	//padding: 15px
+	//&__arrow
+	//	vertical-align: middle
+	//	font-size: 0.5vw
+	//	margin-left: 0.3vw
 
 @media (max-width: 1199px)
 	.logo
@@ -164,6 +174,12 @@
 		align-items: center
 		justify-content: space-between
 		margin: auto
+		&__arrow
+			position: relative
+			top: 1.5vw
+			border-top: 0.7vw solid #fff
+			border-right: 0.7vw solid transparent
+			border-left: 0.7vw solid transparent
 		
 		&__subLinkActive
 			opacity: 1 !important
@@ -185,15 +201,7 @@
 		&__subLink
 			margin-left: 10px
 		
-		&__arrow
-			display: block
-			width: 0
-			height: 0
-			margin: 0 0 0 5px
-			transition: transform .3s ease 0s
-			border-top: 5px solid #fff
-			border-right: 5px solid transparent
-			border-left: 5px solid transparent
+
 		
 		&__icon
 			display: block
@@ -205,10 +213,11 @@
 			width: 100%
 			
 			li
-				display: flex
-				align-items: center
-				justify-content: center
-				flex-wrap: wrap
+				margin-bottom: 2vw
+				//display: flex
+				//align-items: center
+				//justify-content: center
+				//flex-wrap: wrap
 				
 				&:hover
 					border: none
@@ -222,7 +231,7 @@
 		&__subList
 			position: relative
 			flex-basis: 100%
-			margin: 0 30rem
+			margin: 0
 			height: 0
 		
 		&__body
@@ -235,6 +244,8 @@
 			padding: 100px 30px 30px 30px
 			transition: left .3s
 			overflow: auto
+			font-size: 2.5vw
+			z-index: 999
 			
 			&:before
 				content: ""
@@ -251,4 +262,21 @@
 				z-index: 2
 				display: flex
 				flex-direction: column
-		
+@media (max-width: 576px)
+	.menu
+		&__body
+			font-size: 3vw
+		&__arrow
+			top: 2vw
+			border-top: 1vw solid #fff
+			border-right: 1vw solid transparent
+			border-left: 1vw solid transparent
+@media (max-width: 428px)
+	.menu
+		&__body
+			font-size: 5vw
+		&__arrow
+			top: 3.5vw
+			border-top: 1.5vw solid #fff
+			border-right: 1.5vw solid transparent
+			border-left: 1.5vw solid transparent

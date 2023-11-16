@@ -25,16 +25,17 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 		//
 		// })
 		return linksData.map((link, index) => (
-			<li key={index}
+			<li key={link.id}
 			    className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>
 				{link.attributes.children.data.length > 0 ? (
 					<>
 						<span className={`${styles.menu__subLink} `}
-						      onClick={() => toggleSubMenu(index)}>
-							{locale === "en" ? link.attributes.title + " ⌄" : link.attributes.title_ua + " ⌄"}
+						      onClick={() => toggleSubMenu(link.id)}>
+							{locale === "en" ? link.attributes.title : link.attributes.title_ua}
+							<i className={styles.menu__arrow}></i>
 						</span>
-						<span className={styles.menu__arrow}></span>
-						<ul className={`${styles.menu__subList} ${isSubMenuOpen[index] ? styles.menu__subLinkActive : ''}`}>
+						
+						<ul className={`${styles.menu__subList} ${isSubMenuOpen[link.id] ? styles.menu__subLinkActive : ''}`}>
 							{renderLinks(link.attributes.children.data)}
 						</ul>
 					</>
