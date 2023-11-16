@@ -18,11 +18,11 @@ const SinglePageItems = ({section, content, btnName, isSingle}) => {
 			<div className={`section__page ${styles.page} ${isSingle ? styles.page__single : ""}`}>
 				{isSingle ? (
 					<div className={`${styles.page__item}`}>
-						{data.attributes?.publishedAt &&
-							<div className={styles.page__date}>
-								<h4>{formatDate(data.attributes.publishedAt)}</h4>
-							</div>
-						}
+						{/*{data.attributes?.publishedAt &&*/}
+						{/*	<div className={styles.page__date}>*/}
+						{/*		<h4>{formatDate(data.attributes.publishedAt)}</h4>*/}
+						{/*	</div>*/}
+						{/*}*/}
 						{data.attributes?.Image &&
 							<div className={styles.page__img}>
 								<Image src={data.attributes.Image.data.attributes.url} alt={data.attributes.Title}

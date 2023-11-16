@@ -30,11 +30,11 @@ const News = ({items, header_items, footer_items}) => {
 										<div className={styles.news__item__title}>
 											<h4>{item.attributes.Title}</h4>
 										</div>
-										{item.attributes.publishedAt &&
-											<div className={styles.news__date}>
-												<h4>{formatDate(item.attributes.publishedAt)}</h4>
-											</div>
-										}
+										{/*{item.attributes.publishedAt &&*/}
+										{/*	<div className={styles.news__date}>*/}
+										{/*		<h4>{formatDate(item.attributes.publishedAt)}</h4>*/}
+										{/*	</div>*/}
+										{/*}*/}
 										{item.attributes.short_description && (
 											<div className={styles.news__description}>
 												<p>{item.attributes.short_description}</p>

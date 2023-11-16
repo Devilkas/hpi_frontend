@@ -4,7 +4,7 @@ axios.defaults.baseURL = process.env.API_URL;
 export const PagesService = {
 	async getAll(locale) {
 		try {
-			const {data} = await axios.get('/chairs', {
+			const {data} = await axios.get('/pages', {
 				params: {
 					populate: 'deep',
 					locale: locale
@@ -17,8 +17,7 @@ export const PagesService = {
 	},
 	async getById(id, locale) {
 		try {
-			const {data} = await axios.get(`/chairs/?filters[seo_url][$eq]=${id}`, {
-			// const {data} = await axios.get(`/chairs/${id}`, {
+			const {data} = await axios.get(`/pages/?filters[seo_url][$eq]=${id}`, {
 				params: {
 					populate: 'deep',
 					locale: locale

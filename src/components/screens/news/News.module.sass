@@ -6,15 +6,11 @@
 		grid-template-columns: repeat(4, 1fr)
 		grid-gap: 1vw
 		margin: 0 1vw
-		//grid-gap: 1rem
-		//margin: 0 1rem
 	
 	&__title
 		margin-top: 6vw
-		//margin-top: 6rem
 		text-align: center
 		font-size: 2vw
-		//font-size: 2rem
 		position: relative
 		margin-bottom: 3rem
 		
@@ -33,42 +29,38 @@
 				display: block
 	
 	&__item
-		position: relative
-		align-items: center
-		font-size: 1vw
-		//font-size: 1rem
-		background: rgba($color-blue, .3)
-		transition: all .3s
-		border-bottom-left-radius: 5px
-		border-bottom-right-radius: 5px
+		box-shadow: 0 2px 3px rgba($color-blue, .3)
+		transition: all 0.3s
 		
 		&:hover
-			background: rgba($color-blue, .6)
+			box-shadow: 0 5px 10px rgba($color-blue, .7)
+			
+			.news
+				&__img
+					img
+						transform: scale(1.1)
 		
-		&__title
+		&__item__title
 			font-size: 1.2vw
-			margin-bottom: 1vw
-			//font-size: 1.2rem
-			//margin-bottom: 1rem
+			margin-bottom: 0.3vw
 	
 	&__content
-		padding: 1vw
-		//padding: 1rem
-		display: grid
-		align-content: center
+		padding: 0 1vw 1vw 1vw
+		height: auto
 	
 	
 	&__date
 		margin-bottom: 1vw
-		//margin-bottom: 1rem
 	
 	&__description
 		text-align: justify
+		font-size: .8vw
 	
 	&__img
 		position: relative
-		width: 100%
-		height: auto
+		width: auto
+		height: 23.2vw
+		overflow: hidden
 		
 		img
 			position: relative
@@ -79,10 +71,10 @@
 			object-fit: cover
 			border-top-left-radius: 5px
 			border-top-right-radius: 5px
+			transition: all .3s
 	
 	&__links
 		margin: 2vw auto
-		//margin: 2rem auto
 		text-align: center
 		
 		button,
@@ -90,7 +82,6 @@
 			background: white
 			border: 2px solid $color-blue-dark
 			padding: 1vw
-			//padding: 1rem
 			color: $color-blue-dark
 			border-radius: 5px
 			transition: all .3s
@@ -102,9 +93,12 @@
 
 @media (max-width: 1024px)
 	.news
-		&__title
+		&__item__title
+			font-size: 2.2vw
 			margin-top: 1vw
-			//margin-top: 1rem
+		
+		&__description
+			font-size: 1.2vw
 		
 		&__items
 			grid-template-columns: 1fr 1fr
@@ -113,9 +107,11 @@
 
 @media (max-width: 576px)
 	.news
-		&__title
-			font-size: 1vw
-			//font-size: 1rem
+		&__img
+			height: 25vw
+		
+		&__description
+			font-size: 1.5vw
 		
 		&__items
 			grid-template-columns: 1fr

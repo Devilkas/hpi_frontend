@@ -5,16 +5,23 @@ import {HeaderService} from "@/services/header.service";
 import {FooterService} from "@/services/foorter.service";
 import {ApiService} from "@/services/api.service";
 import {EventsService} from "@/services/events.service";
+import {NewsService} from "@/services/news.service";
 
 const REVALIDATE_TIME = Number(process.env.REVALIDATE_TIME);
-const HomePage = ({slides, info, history, events, news, science, header_items, footer_items, no_data = false}) => {
+// const HomePage = ({slides, info, history, events, news, science, header_items, footer_items, no_data = false}) => {
+const HomePage = ({slides, events, news, important_news, header_items, footer_items, no_data = false}) => {
 	if (no_data) {
 		return <ErrorPage statusCode={404}/>
 	}
-	return <Home slides={slides} info={info} history={history} events={events} news={news} science={science}
+	// return <Home slides={slides} info={info} history={history} events={events} news={news} science={science}
+	//              header_items={header_items}
+	//              footer_items={footer_items}
+	// />
+	return <Home slides={slides} events={events} news={news} important_news={important_news}
 	             header_items={header_items}
 	             footer_items={footer_items}
 	/>
+	
 }
 
 export const getStaticProps = async (context) => {
@@ -23,6 +30,7 @@ export const getStaticProps = async (context) => {
 	const header_logo_title = await ApiService.getAll(locale, "header");
 	const footer = await FooterService.getAll(locale);
 	const items = await HomeService.getAll(locale);
+	const important_news = await NewsService.getByCategory(locale, "vazhlive");
 	
 	if (header === "noData" || footer === "noData" || items === "noData") {
 		return {
@@ -42,6 +50,18 @@ export const getStaticProps = async (context) => {
 				},
 			footer_items: footer.data.attributes.Footer,
 			slides: items.data.attributes.Slider.Slide,
+			important_news: {
+				main_title: "Важливе",
+				items: important_news.data,
+			},
+			events: {
+				main_title: items.data.attributes.event_section_title,
+				items: items.data.attributes.events.data,
+			},
+			news: {
+				main_title: items.data.attributes.news_section_title,
+				items: items.data.attributes.news.data,
+			},
 			// info: {
 			// 	main_title: items.data.attributes.main_section_title,
 			// 	items: [
@@ -85,14 +105,7 @@ export const getStaticProps = async (context) => {
 			// 	items: items.data.attributes.history_section.history_item,
 			// 	links: items.data.attributes.history_section.history_link
 			// },
-			events: {
-				main_title: items.data.attributes.event_section_title,
-				items: items.data.attributes.events.data,
-			},
-			news: {
-				main_title: items.data.attributes.news_section_title,
-				items: items.data.attributes.news.data,
-			},
+			
 			// science: {
 			// 	main_title: items.data.attributes.Science_section_title,
 			// 	items: items.data.attributes.sciences.data,

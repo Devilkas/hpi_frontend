@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const EventHomeItems = ({content}) => {
 	const formatDate = (dateString) => {
-		const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+		const options = {day: '2-digit', month: '2-digit', year: 'numeric'};
 		const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
 		return formattedDate.replace(/\//g, '.');
 	};
@@ -17,7 +17,9 @@ const EventHomeItems = ({content}) => {
 						<p>{formatDate(item.attributes.publishedAt)}</p>
 					</div>
 					<div className={styles.events__img}>
-						<Image src={item.attributes.Image.data.attributes.url} alt={item.attributes.Title} width={item.attributes.Image.data.attributes.width} height={item.attributes.Image.data.attributes.height}/>
+						<Image src={item.attributes.Image.data.attributes.url} alt={item.attributes.Title}
+						       width={item.attributes.Image.data.attributes.width}
+						       height={item.attributes.Image.data.attributes.height}/>
 					</div>
 					<div className={styles.events__content}>
 						<div className={styles.events__title}>

@@ -12,13 +12,15 @@
 		
 		.page
 			&__item
+				display: grid
+				grid-template-columns: .5fr 1.5fr
 				pointer-events: none
 			
 			&__date
 				background: white
 				margin-bottom: 0
 				font-size: 1.5vw
-				//font-size: 1.5rem
+	//font-size: 1.5rem
 	
 	
 	&__item
@@ -30,6 +32,7 @@
 		transition: all .3s
 		border-bottom-left-radius: 5px
 		border-bottom-right-radius: 5px
+		grid-template-columns: 1fr 1fr
 		
 		&:hover
 			background: rgba($color-blue, .6)
@@ -45,11 +48,11 @@
 		font-size: 1.2vw
 		//font-size: 1.2rem
 		margin-bottom: 1vw
-		//margin-bottom: 1rem
+	//margin-bottom: 1rem
 	
 	&__date
 		margin-bottom: 1vw
-		//margin-bottom: 1rem
+	//margin-bottom: 1rem
 	
 	&__description
 		text-align: justify
@@ -57,7 +60,7 @@
 	&__img
 		position: relative
 		width: 100%
-		height: auto
+		height: 100%
 		
 		img
 			position: relative
@@ -89,3 +92,17 @@
 			&:hover
 				color: white
 				background: $color-blue-dark
+
+@media (max-width: 768px)
+	.page
+		&__single
+			.page
+			&__item
+				grid-template-columns: 1fr
+		
+		&__links
+			button,
+			a
+				border: 0.5px solid #031358
+				padding: 2vw
+				font-size: 1.5vw

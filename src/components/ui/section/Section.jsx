@@ -4,20 +4,25 @@ import HistoryHomeItems from "@/components/ui/section/history/HistoryHomeItems";
 import EventHomeItems from "@/components/ui/section/event/EventHomeItems";
 import NewsHomeItems from "@/components/ui/section/news/NewsHomeItems";
 import ScienceHomeItems from "@/components/ui/section/science/ScienceHomeItems";
+import MultiColumnsHomeItems from "@/components/ui/section/multiColumns/MultiColumnsHomeItems";
 
 const Section = ({category, title, content, description = "", links = ""}) => {
 	return (
 		<section className={styles.section} id={category}>
-			<div className={styles.section__title}>
-				<h2>{title}</h2>
-			</div>
+			{title &&
+				<div className={styles.section__title}>
+					<h2>{title}</h2>
+				</div>
+			}
 			{/*{category === "info" ?*/}
 			{/*	<InfoHomeItems className={`section__items`} category={category} description={description}*/}
 			{/*	               content={content}/> : ""}*/}
 			{/*{category === "history" ?*/}
 			{/*// <HistoryHomeItems className={`section__items`} category={category} content={content} links={links}/> : ""}*/}
-			{category === "events" ?
-				<EventHomeItems className={`section__items`} category={category} content={content}/> : ""}
+			{/*{category === "events" ?*/}
+			{/*	<MultiColumnsHomeItems className={`section__items`} category={category} content={content}/> : ""}	*/}
+			{category === "multiple-columns" ?
+				<MultiColumnsHomeItems className={`section__items`} category={category} content={content}/> : ""}
 			{category === "news" ?
 				<NewsHomeItems className={`section__items`} isHomePage={true} category={category} content={content}/> : ""}
 			{/*{category === "science" ?*/}

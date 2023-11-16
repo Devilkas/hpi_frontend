@@ -5,7 +5,7 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 
 const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) => {
-	const {pathname} = useRouter()
+	const {pathname, locale} = useRouter()
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isSubMenuOpen, setIsSubMenuOpen] = useState([]);
 	
@@ -21,11 +21,8 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 	
 	const renderLinks = (linksData) => {
 		// linksData.map((link, index) => {
-		// 	console.log("link",link)
-		// 	{link.attributes.children.data.length > 0 ?
-		// 		renderLinks(link.attributes.children.data):
-		// 		""
-		// 	}
+		// 	console.log("link", link)
+		//
 		// })
 		return linksData.map((link, index) => (
 			<li key={index}
@@ -34,7 +31,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 					<>
 						<span className={`${styles.menu__subLink} `}
 						      onClick={() => toggleSubMenu(index)}>
-							{link.attributes.title}
+							{locale === "en" ? link.attributes.title : link.attributes.title_ua}
 						</span>
 						<span className={styles.menu__arrow}></span>
 						<ul className={`${styles.menu__subList} ${isSubMenuOpen[index] ? styles.menu__subLinkActive : ''}`}>
@@ -42,8 +39,8 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 						</ul>
 					</>
 				) : (
-					<Link href={link.attributes.url}>
-						{link.attributes.title}
+					<Link href={link.attributes.url === null ? "#" : link.attributes.url}>
+						{locale === "en" ? link.attributes.title : link.attributes.title_ua}
 					</Link>
 				)}
 			</li>
