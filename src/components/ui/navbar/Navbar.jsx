@@ -31,7 +31,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 					<>
 						<span className={`${styles.menu__subLink} `}
 						      onClick={() => toggleSubMenu(index)}>
-							{locale === "en" ? link.attributes.title : link.attributes.title_ua}
+							{locale === "en" ? link.attributes.title + " ⌄" : link.attributes.title_ua + " ⌄"}
 						</span>
 						<span className={styles.menu__arrow}></span>
 						<ul className={`${styles.menu__subList} ${isSubMenuOpen[index] ? styles.menu__subLinkActive : ''}`}>
