@@ -5,7 +5,7 @@ const NewsHomeItems = ({content, isSingle = false, isHomePage = false}) => {
 	return (
 		<>
 			<div className={`section__news ${styles.news}`}>
-				{content && content.slice(0, 4).map((item, index) => (
+				{content && content.slice(0, 8).map((item, index) => (
 					<Link href={`/news/${item.attributes.seo_url}`} className={`${styles.news__item}`} key={index}>
 						<div className={styles.news__content}>
 							<div className={styles.news__title}>

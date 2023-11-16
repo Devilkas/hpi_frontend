@@ -27,7 +27,6 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 		// 		""
 		// 	}
 		// })
-		console.log("pathname",pathname)
 		return linksData.map((link, index) => (
 			<li key={index}
 			    className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>

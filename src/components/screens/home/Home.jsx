@@ -13,7 +13,7 @@ const Home = ({slides, info, history, events, news, science, header_items, foote
 					{/*<Section category="info" title={info.main_title} content={info.items}/>*/}
 					{/*<Section category="history" title={history.main_title} content={history.items} links={history.links}/>*/}
 					{/*<Section category="events" title={events.main_title} content={events.items}/>*/}
-					{/*<Section category="news" title={news.main_title} content={news.items}/>*/}
+					<Section category="news" title={news.main_title} content={news.items}/>
 					{/*<Section category="science" title={science.main_title} content={science.items}/>*/}
 				</div>
 			</div>
