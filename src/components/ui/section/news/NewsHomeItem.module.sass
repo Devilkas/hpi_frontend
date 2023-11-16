@@ -2,8 +2,10 @@
 .news
 	display: grid
 	grid-template-columns: repeat(2, 1fr)
-	grid-gap: 1rem
-	margin: 0 1rem
+	grid-gap: 1vw
+	margin: 0 1vw
+	//grid-gap: 1rem
+	//margin: 0 1rem
 	
 	&__item
 		position: relative
@@ -21,7 +23,8 @@
 			top: 0
 			bottom: 0
 			z-index: 2
-			width: 0.4rem
+			width: 0.4vw
+			//width: 0.4rem
 			background: $color-blue-dark
 		
 		&:hover
@@ -31,13 +34,16 @@
 				background: $color-orange
 	
 	&__content
-		padding: 0 1rem
+		padding: 0 1vw
+		//padding: 0 1rem
 		display: grid
 		align-content: center
 	
 	&__title
-		font-size: 1.2rem
-		margin-bottom: 1rem
+		font-size: 1.2vw
+		margin-bottom: 1vw
+		//font-size: 1.2rem
+		//margin-bottom: 1rem
 	
 	&__description
 		text-align: justify
@@ -56,12 +62,14 @@
 			object-fit: cover
 	
 	&__links
-		margin: 2rem auto
+		margin: 2vw auto
+		//margin: 2rem auto
 		text-align: center
 		
 		a
 			border: 2px solid $color-blue-dark
-			padding: 1rem
+			padding: 1vw
+			//padding: 1rem
 			color: $color-blue-dark
 			border-radius: 5px
 			transition: all .3s
@@ -69,16 +77,20 @@
 			&:hover
 				color: white
 				background: $color-blue-dark
+
 @media (max-width: 1024px)
 	.news
 		grid-template-columns: repeat(1, 1fr)
+		
 		&__content
 			order: 2
-			
+		
 		&__img
 			order: 1
+		
 		&__item
 			grid-template-columns: .7fr 1.3fr
+
 @media (max-width: 768px)
 	.news
 		grid-template-columns: repeat(1, 1fr)

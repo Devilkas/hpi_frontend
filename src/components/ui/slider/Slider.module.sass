@@ -9,7 +9,8 @@
 .slidesContainer
 	position: relative
 	width: 100%
-	height: 500px
+	//height: 500px
+	height: 40vw
 	overflow: hidden
 
 .slide
@@ -69,8 +70,10 @@
 			display: block
 			position: absolute
 			background-color: $white
-			width: 0.4rem
-			height: 0.4rem
+			//width: 0.4rem
+			//height: 0.4rem
+			width: 0.4vw
+			height: 0.4vw
 			transform: translate(-50%, -50%)
 			top: 50%
 			left: 50%
@@ -102,17 +105,22 @@
 	h3
 		font-family: $SansaBold
 		color: $white
-		font-size: 3.8rem
-		margin-bottom: 6rem
+		font-size: 3.8vw
+		margin-bottom: 6vw
+		//font-size: 3.8rem
+		//margin-bottom: 6rem
+
 	
 	a
-		padding: 15px 30px
+		padding: 1vw 2vw
+		//padding: 15px 30px
 		background: $color-blue
 		color: $white
 		border-radius: 4px
 		cursor: pointer
 		transition: all 0.3s ease-in-out
-		font-size: 1rem
+		font-size: 1vw
+		//font-size: 1rem
 		font-family: $FiraExtra
 		border: 1px solid $color-orange
 		
@@ -121,3 +129,14 @@
 			color: $color-blue
 			border: 1px solid $color-blue
 		
+@media (max-width: 768px)
+	.slideContent
+	
+		h3
+			font-family: $SansaBold
+			color: $white
+			font-size: 10vw
+			margin-bottom: 6vw
+		a
+			padding: 2vw 4vw
+			font-size: 2vw

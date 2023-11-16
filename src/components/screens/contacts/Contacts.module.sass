@@ -1,21 +1,27 @@
 @import "@/styles/var"
 
 .contacts
-	padding: 0 1rem
+	padding: 0 1vw
+	//padding: 0 1rem
 	
 	&__title
-		margin-top: 6rem
+		margin-top: 6vw
+		//margin-top: 6rem
 		text-align: center
-		font-size: 2rem
+		font-size: 2vw
+		//font-size: 2rem
 		position: relative
-		margin-bottom: 3rem
+		margin-bottom: 3vw
+		//margin-bottom: 3rem
 		
 		h2
 			&:after
 				content: ""
 				position: absolute
-				width: 9rem
-				height: 0.4rem
+				width: 9vw
+				height: 0.4vw
+				//width: 9rem
+				//height: 0.4rem
 				background-color: $color-blue
 				margin: auto
 				left: 0
@@ -28,8 +34,10 @@
 		li
 			list-style: none
 			position: relative
-			padding-bottom: 1rem
-			margin-bottom: 1rem
+			padding-bottom: 1vw
+			//padding-bottom: 1rem
+			margin-bottom: 1vw
+			//margin-bottom: 1rem
 			&:not(:last-child)
 				&:after
 					content: ""
@@ -38,10 +46,12 @@
 					left: 0
 					bottom: 0
 					background-color: $color-blue-dark
-					width: 32rem
+					width: 32vw
+					//width: 32rem
 					height: 2px
 			h3
-				font-size: 2rem
+				font-size: 2vw
+				//font-size: 2rem
 			a
 				color: $color-blue-dark
 				text-decoration: underline
@@ -51,14 +61,17 @@
 					color: $color-orange
 			
 			p
-				padding-left: 1rem
+				padding-left: 1vw
+				//padding-left: 1rem
 			
 @media (max-width: 1024px)
 	.contacts
 		&__title
-			margin-top: 1rem
+			margin-top: 1vw
+			//margin-top: 1rem
 
 @media (max-width: 576px)
 	.contacts
 		&__title
-			font-size: 1rem
+			font-size: 1vw
+			//font-size: 1rem

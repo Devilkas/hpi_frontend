@@ -1,21 +1,27 @@
 @import "@/styles/var"
 
 .students
-	padding: 0 1rem
+	padding: 0 1vw
+	//padding: 0 1rem
 	
 	&__title
-		margin-top: 6rem
+		margin-top: 6vw
+		//margin-top: 6rem
 		text-align: center
-		font-size: 2rem
+		font-size: 2vw
+		//font-size: 2rem
 		position: relative
-		margin-bottom: 3rem
+		margin-bottom: 3vw
+		//margin-bottom: 3rem
 		
 		h2
 			&:after
 				content: ""
 				position: absolute
-				width: 9rem
-				height: 0.4rem
+				width: 9vw
+				//width: 9rem
+				height: 0.4vw
+				//height: 0.4rem
 				background-color: $color-blue
 				margin: auto
 				left: 0
@@ -24,11 +30,14 @@
 	
 	&__content
 		position: relative
+		
 		h3
-			font-size: 2rem
+			font-size: 2vw
+		//font-size: 2rem
 		li
 			position: relative
-			margin-left: 1rem
+			margin-left: 1vw
+			//margin-left: 1rem
 			a
 				color: $color-blue-dark
 				text-decoration: underline
@@ -38,14 +47,17 @@
 					color: $color-orange
 			
 			p
-				padding-left: 1rem
-			
+				padding-left: 1vw
+//padding-left: 1rem
+
 @media (max-width: 1024px)
 	.students
 		&__title
-			margin-top: 1rem
+			margin-top: 1vw
+			//margin-top: 1rem
 
 @media (max-width: 576px)
 	.students
 		&__title
-			font-size: 1rem
+			font-size: 1vw
+			//font-size: 1rem

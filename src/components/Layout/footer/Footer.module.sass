@@ -14,20 +14,24 @@
 	&__copyright
 		padding: 10px 0
 		position: relative
+		font-size: 1vw
 	
 	&__items
 		text-align: left
 		display: grid
 		grid-template-columns: repeat(3, 1fr)
-		grid-gap: 2rem
+		grid-gap: 2vw
+		//grid-gap: 2rem
 	
 	&__title
 		font-family: $FiraSemi
 		margin: 15px auto
-		font-size: 1.3rem
+		font-size: 1.3vw
+		//font-size: 1.3rem
 	
 	&__content
-		font-size: .8rem
+		//font-size: .8rem
+		font-size: .8vw
 	
 	&__menu
 		ul
@@ -73,6 +77,8 @@
 			filter: brightness(0) invert(1)
 			pointer-events: none
 			transition: all .3s
+			width: auto
+			height: 1.5vw
 		
 		&:hover
 			object
