@@ -40,7 +40,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 						</ul>
 					</>
 				) : (
-					<Link href={link.attributes.url === null ? "#" : link.attributes.url}>
+					<Link href={link.attributes.url === null || link.attributes.url === "" ? "#" : link.attributes.url}>
 						{locale === "en" ? link.attributes.title : link.attributes.title_ua}
 					</Link>
 				)}
