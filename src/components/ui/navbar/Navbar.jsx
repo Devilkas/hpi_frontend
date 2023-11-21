@@ -29,11 +29,11 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 			    className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>
 				{link.attributes.children.data.length > 0 ? (
 					<>
-						<span className={`${styles.menu__subLink} `}
+						<Link href={link.attributes.url === null || link.attributes.url === "" ? "/#" : link.attributes.url} className={`${styles.menu__subLink} `}
 						      onClick={() => toggleSubMenu(link.id)}>
 							{locale === "en" ? link.attributes.title : link.attributes.title_ua}
 							<i className={styles.menu__arrow}></i>
-						</span>
+						</Link>
 						
 						<ul className={`${styles.menu__subList} ${isSubMenuOpen[link.id] ? styles.menu__subLinkActive : ''}`}>
 							{renderLinks(link.attributes.children.data)}
