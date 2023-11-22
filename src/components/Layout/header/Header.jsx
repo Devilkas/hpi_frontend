@@ -7,7 +7,8 @@ import Link from "next/link";
 
 const Header = ({headerInfo}) => {
 	// const [headerInfo, setHeaderInfo] = useState(null);
-	// const router = useRouter();
+	const {locale} = useRouter();
+	console.log(locale)
 	//
 	// useEffect(() => {
 	// 	const fetchData = async (locale) => {
@@ -27,10 +28,10 @@ const Header = ({headerInfo}) => {
 					<p>{headerInfo?.title}</p>
 					<div className={styles.header__lang}>
 						<ul>
-							<li>
+							<li className={locale === "uk" ? styles.header__disabled : ""}>
 								<Link href="/uk">UA</Link>
 							</li>
-							<li>
+							<li className={locale === "en" ? styles.header__disabled : ""}>
 								<Link href="/en">EN</Link>
 							</li>
 						</ul>

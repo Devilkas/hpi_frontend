@@ -27,20 +27,19 @@ const HomePage = ({slides, events, news, important_news, header_items, footer_it
 export const getStaticProps = async (context) => {
 	const {locale} = context
 	const header = await HeaderService.getAll(locale);
-	const header_logo_title = await ApiService.getAll("header");
+	const header_logo_title = await ApiService.getAll("uk", "header");
 	const footer = await FooterService.getAll(locale);
 	const items = await HomeService.getAll(locale);
 	const important_news = await NewsService.getByCategory(locale, "vazhlive");
 	
 	// console.log(header, footer, items)
-	// if (header === "noData" || footer === "noData" || items === "noData") {
-	// 	return {
-	// 		props: {
-	// 			no_data: true
-	// 		}
-	// 	}
-	// }
-	
+	if (header === "noData" || footer === "noData" || items === "noData") {
+		return {
+			props: {
+				no_data: true
+			}
+		}
+	}
 	return {
 		props: {
 			header_items:

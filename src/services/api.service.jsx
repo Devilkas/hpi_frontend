@@ -2,7 +2,8 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.API_URL;
 export const ApiService = {
-	async getAll(locale="uk", path) {
+	async getAll(locale = "uk", path) {
+		
 		try {
 			const {data} = await axios.get(`/${path}`, {
 				params: {
@@ -10,12 +11,13 @@ export const ApiService = {
 					locale: locale
 				}
 			})
+			
 			return data;
 		} catch (e) {
 			return "noData"
 		}
 	},
-	async getById(id, locale="uk", path) {
+	async getById(id, locale = "uk", path) {
 		try {
 			// https://api.dev.sspu.sumy.ua/api/news?filters[seo_url][$eq]=konkursu-magisterskih-robit&populate=deep
 			const {data} = await axios.get(`/${path}?filters[seo_url][$eq]=${id}`, {
