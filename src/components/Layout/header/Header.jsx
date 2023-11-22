@@ -3,6 +3,7 @@ import Navbar from "@/components/ui/navbar/Navbar";
 import {HeaderService} from "@/services/header.service";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
+import Link from "next/link";
 
 const Header = ({headerInfo}) => {
 	// const [headerInfo, setHeaderInfo] = useState(null);
@@ -24,6 +25,16 @@ const Header = ({headerInfo}) => {
 			<div className="container-w100">
 				<div className={`header__row ${styles.header__title}`}>
 					<p>{headerInfo?.title}</p>
+					<div className={styles.header__lang}>
+						<ul>
+							<li>
+								<Link href="/uk">UA</Link>
+							</li>
+							<li>
+								<Link href="/en">EN</Link>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 			<div className={`container-large ${styles.header}`}>

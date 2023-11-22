@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.API_URL;
 export const EventsService = {
-	async getAll(locale) {
+	async getAll(locale="uk") {
 		try {
 			const {data} = await axios.get('/events', {
 				params: {
@@ -16,7 +16,7 @@ export const EventsService = {
 		}
 		
 	},
-	async getById(id, locale) {
+	async getById(id, locale="uk") {
 		try {
 			const {data} = await axios.get(`/events/?filters[seo_url][$eq]=${id}`,  {
 			// const {data} = await axios.get(`/events/${id}`,  {

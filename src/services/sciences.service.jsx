@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.API_URL;
 export const SciencesService = {
-	async getAll(locale) {
+	async getAll(locale="uk") {
 		try {
 			const {data} = await axios.get(`/sciences`, {
 				params: {
@@ -15,7 +15,7 @@ export const SciencesService = {
 			return "noData"
 		}
 	},
-	async getById(id, locale) {
+	async getById(id, locale="uk") {
 		try {
 			const {data} = await axios.get(`/sciences/?filters[seo_url][$eq]=${id}`, {
 			// const {data} = await axios.get(`/sciences/${id}`, {

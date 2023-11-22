@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.API_URL;
 export const PagesService = {
-	async getAll(locale) {
+	async getAll(locale="uk") {
 		try {
 			const {data} = await axios.get('/pages', {
 				params: {
@@ -15,7 +15,7 @@ export const PagesService = {
 			return "noData"
 		}
 	},
-	async getById(id, locale) {
+	async getById(id, locale="uk") {
 		try {
 			const {data} = await axios.get(`/pages/?filters[seo_url][$eq]=${id}`, {
 				params: {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = process.env.API_URL;
 export const ContactService = {
-	async getAll(locale) {
+	async getAll(locale="uk") {
 		try {
 			const {data} = await axios.get('/contact', {
 				params: {
