@@ -68,7 +68,7 @@
 	
 	&__list
 		display: flex
-		
+		z-index: 3
 		
 		& > li:hover
 			border-bottom: 3px solid $white
@@ -79,6 +79,16 @@
 				transform: translate(0, 0)
 				pointer-events: all
 				height: auto
+				
+				& > li:hover
+					
+					.menu__dropdown
+						opacity: 1
+						visibility: visible
+						transform: translate(0, 0)
+						pointer-events: all
+						height: auto
+		
 		
 		li
 			list-style: none
@@ -92,7 +102,8 @@
 				padding: 10px 20px
 				color: $white
 	
-	&__subList
+	&__subList,
+	&__dropdown
 		z-index: 2
 		position: absolute
 		transform: translate(0, 10px)
@@ -109,6 +120,21 @@
 			&:hover
 				background: $color-blue
 				border: 1px solid $white
+				
+				.menu__arrow
+					border-top: 5px solid $white
+				
+				a
+					color: white
+				
+				.menu__dropdown
+					li
+						a
+							color: $color-blue
+							
+							&:hover
+								color: $white
+			
 			
 			a
 				display: block
@@ -118,11 +144,51 @@
 				&:hover
 					color: $white
 	
+	&__dropdown
+		margin-top: -3.1vw
+		right: -14.5vw
+		width: 15vw
+	
 	&__subLink
 		cursor: pointer
 		padding: 2vw
-		//padding: 15px
 		color: $white
+		
+		&__dropdown
+			position: relative
+			
+			span
+				margin-right: 1vw
+			
+			.menu__arrow
+				right: 1vw
+				border-top: 5px solid $color-blue
+				transform: rotate(-90deg)
+			
+			li
+				padding: 0 1vw
+				
+				.menu__arrow
+					border-top: 5px solid $color-blue
+			
+			&:hover
+				.menu
+					&__arrow
+						border-top: 5px solid $white
+	
+	&__right
+		.menu
+			&__dropdown
+				right: auto
+				left: -14.5vw
+			
+			&__subLink
+				&__dropdown
+					.menu__arrow
+						transform: rotate(90deg)
+						right: auto
+						left: 0
+
 
 .fullWidth
 	grid-template-columns: 1fr
@@ -148,11 +214,11 @@
 		background: $color-blue
 		border-radius: 50%
 		padding: 1vw
-	//padding: 15px
-	//&__arrow
-	//	vertical-align: middle
-	//	font-size: 0.5vw
-	//	margin-left: 0.3vw
+//padding: 15px
+//&__arrow
+//	vertical-align: middle
+//	font-size: 0.5vw
+//	margin-left: 0.3vw
 
 @media (max-width: 1199px)
 	.logo
@@ -174,7 +240,9 @@
 		align-items: center
 		justify-content: space-between
 		margin: auto
+		
 		&__arrow
+			//display: none
 			position: relative
 			top: 1.5vw
 			border-top: 0.7vw solid #fff
@@ -199,7 +267,11 @@
 		
 		
 		&__subLink
+			pointer-events: none
 			margin-left: 10px
+			&__dropdown
+				.menu__arrow
+					border-top: 5px solid $white
 		
 		&__icon
 			display: block
@@ -227,11 +299,37 @@
 					a
 						color: $color-orange
 		
-		&__subList
+		&__subList,
+		&__dropdown
 			position: relative
 			flex-basis: 100%
 			margin: 0
-			height: 0
+			//height: 0
+			//opacity: 1
+			//visibility: visible
+			//pointer-events: all
+			//height: auto
+			background: transparent
+			border: 1px solid $white
+			opacity: 1 !important
+			visibility: visible !important
+			transform: translate(0, 0) !important
+			pointer-events: all !important
+			height: auto !important
+			
+			li
+				a
+					color: $white
+		
+		&__dropdown
+			width: 90%
+			right: auto
+			left: auto
+			margin: auto
+			background: transparent
+			.menu__arrow
+				border-top: 5px solid $white
+		
 		
 		&__body
 			position: fixed
@@ -240,7 +338,7 @@
 			width: 100%
 			height: 100%
 			background: rgba(0, 0, 0, .9)
-			padding: 100px 30px 30px 30px
+			padding: 13vw 2vw 2vw 2vw
 			transition: left .3s
 			overflow: auto
 			font-size: 2.5vw
@@ -252,30 +350,51 @@
 				width: 100%
 				top: 0
 				left: 0
-				//height: 6rem
-				background: $color-blue
-				z-index: 2
+				//height: 10vw
+				//background: rgba(0, 0, 0, 1)
+				//background: $color-blue
+				z-index: 6
 			
 			&.active
 				left: 0
 				z-index: 2
 				display: flex
 				flex-direction: column
+				&:before
+					height: 10vw
+					background: rgba(0, 0, 0, 1)
+
 @media (max-width: 576px)
 	.menu
 		&__body
 			font-size: 3vw
+			padding: 17vw 2vw 2vw 2vw
+			&.active
+				&:before
+					height: 15vw
+		
 		&__arrow
 			top: 2vw
 			border-top: 1vw solid #fff
 			border-right: 1vw solid transparent
 			border-left: 1vw solid transparent
+
 @media (max-width: 428px)
 	.menu
 		&__body
 			font-size: 5vw
+			padding: 20vw 2vw 2vw 2vw
+			&.active
+				&:before
+					height: 20vw
+		
 		&__arrow
 			top: 3.5vw
 			border-top: 1.5vw solid #fff
 			border-right: 1.5vw solid transparent
 			border-left: 1.5vw solid transparent
+
+@media (max-width: 320px)
+	.menu
+		&__body
+			padding: 25vw 2vw 2vw 2vw

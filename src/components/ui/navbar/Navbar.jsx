@@ -14,29 +14,30 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 		setIsMenuOpen(!isMenuOpen);
 	};
 	const toggleSubMenu = (index) => {
-		const updatedSubMenuOpen = [...isSubMenuOpen];
-		updatedSubMenuOpen[index] = !updatedSubMenuOpen[index];
-		setIsSubMenuOpen(updatedSubMenuOpen);
+		// const updatedSubMenuOpen = [...isSubMenuOpen];
+		// updatedSubMenuOpen[index] = !updatedSubMenuOpen[index];
+		// setIsSubMenuOpen(updatedSubMenuOpen);
 	};
 	
-	const renderLinks = (linksData) => {
-		// linksData.map((link, index) => {
-		// 	console.log("link", link)
-		//
-		// })
+	const renderLinks = (linksData, level = 0) => {
+		const submenuClass = level === 0 ? styles.menu__subList : `${styles.menu__dropdown}`;
+		
 		return linksData.map((link, index) => (
-			<li key={link.id}
-			    className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>
+			<li key={link.id} className={pathname === link.attributes.url ? styles.menu__linkActive : ''}>
 				{link.attributes.children.data.length > 0 ? (
 					<>
-						<Link href={link.attributes.url === null || link.attributes.url === "" ? "/#" : link.attributes.url} className={`${styles.menu__subLink} `}
-						      onClick={() => toggleSubMenu(link.id)}>
-							{locale === "en" ? link.attributes.title : link.attributes.title_ua}
+						<Link
+							href={link.attributes.url === null || link.attributes.url === "" ? "/#" : link.attributes.url}
+							className={`${level > 0 ? styles.menu__subLink__dropdown : styles.menu__subLink}`}
+							// onClick={() => toggleSubMenu(link.id)}
+						>
+							<span>{locale === "en" ? link.attributes.title : link.attributes.title_ua}</span>
 							<i className={styles.menu__arrow}></i>
 						</Link>
 						
-						<ul className={`${styles.menu__subList} ${isSubMenuOpen[link.id] ? styles.menu__subLinkActive : ''}`}>
-							{renderLinks(link.attributes.children.data)}
+						
+						<ul className={`${submenuClass} ${isSubMenuOpen[link.id] ? styles.menu__subLinkActive : ''}`}>
+							{renderLinks(link.attributes.children.data, level + 1)}
 						</ul>
 					</>
 				) : (
@@ -47,6 +48,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 			</li>
 		));
 	};
+	
 	
 	const renderWithLogo = () => (
 		<>
@@ -62,7 +64,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 					alt="logo"
 				/>
 			</Link>
-			<ul className={styles.menu__list}>
+			<ul className={`${styles.menu__list} ${styles.menu__right}`}>
 				{renderLinks(rightLinks.attributes.items.data)}
 			</ul>
 		</>
