@@ -31,7 +31,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 							className={`${level > 0 ? styles.menu__subLink__dropdown : styles.menu__subLink}`}
 							// onClick={() => toggleSubMenu(link.id)}
 						>
-							<span>{locale === "en" ? link.attributes.title : link.attributes.title_ua}</span>
+							<span>{locale === "en" ? link.attributes.title_en : link.attributes.title}</span>
 							<i className={styles.menu__arrow}></i>
 						</Link>
 						
@@ -42,7 +42,7 @@ const Navbar = ({withLogo = false, leftLinks = [], rightLinks = [], logo = ''}) 
 					</>
 				) : (
 					<Link href={link.attributes.url === null || link.attributes.url === "" ? "/#" : link.attributes.url}>
-						{locale === "en" ? link.attributes.title : link.attributes.title_ua}
+						{locale === "en" ? link.attributes.title_en : link.attributes.title}
 					</Link>
 				)}
 			</li>
