@@ -8,7 +8,7 @@ import Link from "next/link";
 const Header = ({headerInfo}) => {
 	// const [headerInfo, setHeaderInfo] = useState(null);
 	const {locale} = useRouter();
-	console.log(locale)
+	// console.log(locale)
 	//
 	// useEffect(() => {
 	// 	const fetchData = async (locale) => {
