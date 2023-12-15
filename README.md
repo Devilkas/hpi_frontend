@@ -19,6 +19,8 @@ Next step
 ```bash
 cp .env.example .env
 ```
+The next step is to change the [next.config.js](https://nextjs.org/docs/pages/api-reference/next-config-js/rewrites) file to rewrites() if you need to.  
+
 And change
 - **HOST_URL**: site domain
 - **API_URL**: api domain
