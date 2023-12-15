@@ -15,6 +15,14 @@ npm i
 #or
 npm install
 ```
+Next step
+```bash
+cp .env.example .env
+```
+And change
+- **HOST_URL**: site domain
+- **API_URL**: api domain
+- **REVALIDATE_TIME**: To revalidate data at a timed interval, you can use the next.revalidate option of fetch to set the cache lifetime of a resource (in seconds).
 
 ## Main tasks:
 
