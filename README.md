@@ -24,13 +24,6 @@ And change
 - **API_URL**: api domain
 - **REVALIDATE_TIME**: To revalidate data at a timed interval, you can use the next.revalidate option of fetch to set the cache lifetime of a resource (in seconds).
 
-## Main tasks:
-
-- **npm run dev**: run dev mode
-- **npm run build**: project build
-- **npm run start**: run production mode
-
-
 ## Development server
 
 Run:
@@ -52,3 +45,9 @@ npm run start
 ```
 
 ### You can use [PM2 Process Management](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
+## Main tasks descriptions:
+
+- **npm run dev**: run dev mode
+- **npm run build**: project build
+- **npm run start**: run production mode
